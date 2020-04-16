@@ -1,0 +1,3 @@
+Application Version: ${alps.version}
+Spring Boot Version: ${spring-boot.version}
+======> Advanced live production system  is starting now! Please  waiting ...

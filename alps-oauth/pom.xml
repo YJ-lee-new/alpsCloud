@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>alps-oauth</groupId>
+  <artifactId>alps-oauth</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>alps-oauth</name>
+  <description>alps-oauth</description>
+   <parent>
+     <groupId>alps</groupId>
+	 <artifactId>alps</artifactId>
+	 <version>0.0.1-SNAPSHOT</version>
+   </parent>
+   
+   <properties>
+    <jwt-version>1.0.7.RELEASE</jwt-version>
+   </properties>
+  
+  <modules>
+  	<module>alps-oauth-server</module>
+  	<module>alps-oauth-uaa-admin</module>
+  	<module>alps-oauth-common</module>
+  </modules>
+</project>

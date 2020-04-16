@@ -1,0 +1,36 @@
+server:
+    port: 8600
+spring:
+    application:
+        name: oauth2-server
+    cloud:
+        #手动配置Bus id,
+        bus:
+            id: ${spring.application.name}:${server.port}
+    main:
+        allow-bean-definition-overriding: true
+    #解决restful 404错误 spring.mvc.throw-exception-if-no-handler-found=true spring.resources.add-mappings=false
+    mvc:
+        throw-exception-if-no-handler-found: true
+    resources:
+        add-mappings: false
+ #   profiles:
+ #       active: ${profile.name}
+
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+alps: 
+    swagger2:
+        enabled: true
+        description: 平台基础服务器
+        title: 平台基础服务器
+
+#mybatis plus 设置
+mybatis-plus:
+ #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.alps.base.api.**.entity
+  mapper-locations: classpath:mapper/*.xml

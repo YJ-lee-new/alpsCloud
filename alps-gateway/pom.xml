@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>alps-gateway</groupId>
+  <artifactId>alps-gateway</artifactId>
+  <version>1.0.0</version>
+  <name>gateway</name>
+  <description>alps-gateway</description>
+  <packaging>jar</packaging>
+  
+  <parent>
+    <groupId>alps</groupId>
+	<artifactId>alps</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <properties>
+		<swagger.version>2.9.2</swagger.version>
+		<java.version>1.8</java.version>
+  		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
+		<spring-platform.version>Cairo-SR3</spring-platform.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<alps.paltform.version>1.0.0</alps.paltform.version>
+		<spring-cloud-dependencies.version>Greenwich.RELEASE</spring-cloud-dependencies.version>
+	</properties>
+
+	<dependencies>
+	
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+  			<groupId>alps.platform.database</groupId>
+            <artifactId>alps-platform-database</artifactId>
+            <version>${alps.paltform.version}</version>
+  		</dependency>
+  		
+  		<dependency>
+  		    <groupId>alps.platform.log</groupId>
+            <artifactId>alps-platform-log</artifactId>
+            <version>${alps.paltform.version}</version>
+  		</dependency>
+		
+		<!-- 非关系型数据库配置 -->
+		<dependency>
+			<groupId>alps.platform.redis</groupId>
+            <artifactId>alps-platform-redis</artifactId>
+            <version>${alps.paltform.version}</version>
+		</dependency>
+		
+	    <dependency>
+           <groupId>alps.platform.common</groupId>
+           <artifactId>alps-platform-common</artifactId>
+           <version>${alps.paltform.version}</version>
+        </dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+
+		 
+
+		<!-- 选用eureka时打开 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!--  redis基于 reactive stream  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+		</dependency>
+
+	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>${spring-platform.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security.oauth</groupId>
+				<artifactId>spring-security-oauth2</artifactId>
+				<version>${security-oauth2.version}</version>
+			</dependency>
+	      </dependencies>
+	</dependencyManagement>
+	
+	<!-- 形成带第三方jar包的可执行jar包，jar包目录结构如下 application.properties lib META-INF mybatis 
+		org -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+		<finalName>${project.artifactId}</finalName>
+	</build>
+	
+</project>

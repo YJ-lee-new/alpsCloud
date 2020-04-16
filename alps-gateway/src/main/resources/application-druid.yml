@@ -1,0 +1,33 @@
+# 数据源配置
+spring:
+  datasource: 
+    druid: 
+      url: jdbc:mysql://10.157.137.130:3306/alps_system?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8 
+      username: root
+      password: alpsadmin
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      #打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query: SELECT 'x'
+      test-on-borrow: false
+      test-on-return: false 
+      test-while-idle: true      
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      filters: stat,wall
+      web-stat-filter.enabled: true
+      web-stat-filter.url-pattern:  /*
+      web-stat-filter.exclusions: "*.js , *.gif ,*.jpg ,*.png ,*.css ,*.ico , /druid/*"
+      web-stat-filter.session-stat-max-count: 1000
+      web-stat-filter.profile-enable: true
+      stat-view-servlet.enabled: true
+      stat-view-servlet.url-pattern:  /druid/*
+      stat-view-servlet.reset-enable:  true
+      stat-view-servlet.login-username: admin
+      stat-view-servlet.login-password: admin

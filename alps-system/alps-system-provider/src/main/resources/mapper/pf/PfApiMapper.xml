@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alps.pf.mapper.PfApiMapper">
+    
+    <resultMap type="PfApi" id="PfApiResult">
+        <result property="apiId"    column="api_id"    />
+        <result property="appId"    column="app_id"    />
+        <result property="apiName"    column="api_name"    />
+        <result property="apiUrl"    column="api_url"    />
+        <result property="apiDesc"    column="api_desc"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="apiCategory"    column="api_category"    />
+        <result property="status"    column="status"    />
+        <result property="methodName"    column="method_name"    />
+        <result property="apiShow"    column="apiShow"    />
+    </resultMap>
+	
+	<sql id="selectPfApiVo">
+       select api_id, (SELECT app_name FROM pf_app b where b.app_id =  a.app_id) as app_id,  api_name, api_url, api_desc, create_by, CONCAT(api_name,"-->",api_url,"-->",api_desc)as apiShow, create_time, update_by, update_time, api_category, status, method_name from pf_api a
+    </sql>
+	
+    <select id="selectPfApiList" parameterType="PfApi" resultMap="PfApiResult">
+        <include refid="selectPfApiVo"/>
+        <where>  
+            <if test="apiId != null  and apiId != '' "> and api_id = #{apiId}</if>
+             <if test="appId != null  and appId != '' "> and app_id = #{appId}</if>
+             <if test="apiName != null  and apiName != '' "> and api_name = #{apiName}</if>
+             <if test="apiUrl != null  and apiUrl != '' "> and api_url = #{apiUrl}</if>
+             <if test="apiDesc != null  and apiDesc != '' "> and api_desc = #{apiDesc}</if>
+             <if test="createBy != null  and createBy != '' "> and create_by = #{createBy}</if>
+             <if test="createTime != null "> and create_time = #{createTime}</if>
+             <if test="updateBy != null  and updateBy != '' "> and update_by = #{updateBy}</if>
+             <if test="updateTime != null "> and update_time = #{updateTime}</if>
+             <if test="apiCategory != null  and apiCategory != '' "> and api_category = #{apiCategory}</if>
+             <if test="status != null "> and status = #{status}</if>
+             <if test="methodName != null  and methodName != '' "> and method_name = #{methodName}</if>
+         </where>
+    </select>
+    
+    <select id="selectPfApiById" parameterType="String" resultMap="PfApiResult">
+        <include refid="selectPfApiVo"/>
+        where api_id = #{apiId}
+    </select>
+        
+    <insert id="insertPfApi" parameterType="PfApi">
+        insert into pf_api
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="apiId != null  and apiId != ''  ">api_id,</if>
+			<if test="appId != null  and appId != ''  ">app_id,</if>
+			<if test="apiName != null  and apiName != ''  ">api_name,</if>
+			<if test="apiUrl != null  and apiUrl != ''  ">api_url,</if>
+			<if test="apiDesc != null  and apiDesc != ''  ">api_desc,</if>
+			<if test="createBy != null  and createBy != ''  ">create_by,</if>
+			<if test="createTime != null  ">create_time,</if>
+			<if test="updateBy != null  and updateBy != ''  ">update_by,</if>
+			<if test="updateTime != null  ">update_time,</if>
+			<if test="apiCategory != null  and apiCategory != ''  ">api_category,</if>
+			<if test="status != null  ">status,</if>
+			<if test="methodName != null  and methodName != ''  ">method_name,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="apiId != null  and apiId != ''  ">#{apiId},</if>
+			<if test="appId != null  and appId != ''  ">#{appId},</if>
+			<if test="apiName != null  and apiName != ''  ">#{apiName},</if>
+			<if test="apiUrl != null  and apiUrl != ''  ">#{apiUrl},</if>
+			<if test="apiDesc != null  and apiDesc != ''  ">#{apiDesc},</if>
+			<if test="createBy != null  and createBy != ''  ">#{createBy},</if>
+			<if test="createTime != null  ">#{createTime},</if>
+			<if test="updateBy != null  and updateBy != ''  ">#{updateBy},</if>
+			<if test="updateTime != null  ">#{updateTime},</if>
+			<if test="apiCategory != null  and apiCategory != ''  ">#{apiCategory},</if>
+			<if test="status != null  ">#{status},</if>
+			<if test="methodName != null  and methodName != ''  ">#{methodName},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updatePfApi" parameterType="PfApi">
+        update pf_api
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="appId != null  and appId != ''  ">app_id = #{appId},</if>
+            <if test="apiName != null  and apiName != ''  ">api_name = #{apiName},</if>
+            <if test="apiUrl != null  and apiUrl != ''  ">api_url = #{apiUrl},</if>
+            <if test="apiDesc != null  and apiDesc != ''  ">api_desc = #{apiDesc},</if>
+            <if test="createBy != null  and createBy != ''  ">create_by = #{createBy},</if>
+            <if test="createTime != null  ">create_time = #{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''  ">update_by = #{updateBy},</if>
+            <if test="updateTime != null  ">update_time = #{updateTime},</if>
+            <if test="apiCategory != null  and apiCategory != ''  ">api_category = #{apiCategory},</if>
+            <if test="status != null  ">status = #{status},</if>
+            <if test="methodName != null  and methodName != ''  ">method_name = #{methodName},</if>
+        </trim>
+        where api_id = #{apiId}
+    </update>
+
+	<delete id="deletePfApiById" parameterType="String">
+        delete from pf_api where api_id = #{apiId}
+    </delete>
+	
+    <delete id="deletePfApiByIds" parameterType="String">
+        delete from pf_api where api_id in 
+        <foreach item="apiId" collection="array" open="(" separator="," close=")">
+            #{apiId}
+        </foreach>
+    </delete>
+    
+</mapper>

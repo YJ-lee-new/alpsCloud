@@ -1,0 +1,70 @@
+server:
+  port: 8011
+  
+
+# Spring配置
+spring:
+  application:
+    name: reportPro
+  datasource:
+        druid:
+            url: jdbc:mysql://10.202.86.138:3306/leopards?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+            username: root
+            password: liyujie
+            driver-class-name: com.mysql.cj.jdbc.Driver
+  #zipKin 指向
+  zipkin:
+      base-url: http://localhost:9411
+      enabled: true 
+  sleuth: 
+      web:
+        client:
+          enabled: true
+      sampler: 
+        probability: 1.0  #zipkin采集率  0.1表示 10%采集
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    password: guest
+    username: guest
+    listener:
+     direct:
+       retry:
+        enabled: true
+     simple:
+       retry:
+        enabled: true
+  queue: zipkin
+   
+       
+# MyBatis
+mybatis:
+    # 搜索指定包别名
+    typeAliasesPackage: com.alps.report
+    # 配置mapper的扫描，找到所有的mapper.xml映射文件
+    mapperLocations: classpath*:mapper/**/*Mapper.xml
+    # 加载全局的配置文件
+    configLocation: classpath:mapper/mybatis-config.xml
+      
+# PageHelper分页插件
+pagehelper: 
+#动态支持数据库切换
+  autoRuntimeDialect : true
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql 
+ 
+#注册中心指向start 
+#同一服务做负载LB时ID需要不一样，否则eureka会覆盖。   
+eureka:
+  instance:
+    instance-id: alps-report-provider
+    appname: ${spring.application.name}
+  client:
+    registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
+    fetchRegistry:  true  #是否从Eureka中获取注册信息，默认为true 
+    service-url: 
+      defaultZone: http://alps:alps$888@127.0.0.1:8888/eureka/
+    eurekaServerConnectTimeoutSeconds: 60
+    eurekaServerReadTimeoutSeconds: 60

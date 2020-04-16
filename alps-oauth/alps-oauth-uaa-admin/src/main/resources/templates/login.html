@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="alps-cloud统一认证平台">
+    <title>alps-cloud统一认证平台</title>
+   <link href="../static/css/alps/style_log.css"  th:href="@{/static/css/alps/style_log.css?v1}" rel="stylesheet" type="text/css"/>
+   <link href="../static/css/alps/style.css"  th:href="@{/static/css/alps/style.css}" rel="stylesheet" type="text/css"/>
+   <link href="../static/css/alps/userpanel.css"  th:href="@{/static/css/alps/userpanel.css}" rel="stylesheet" type="text/css"/>
+   
+    <link rel="shortcut icon" href="../static/favicon.png"/>
+    <style type="text/css">label.error { position:inherit;  }</style>
+    <script>
+        if(window.top!==window.self){window.top.location=window.location};
+    </script>
+</head>
+
+<body class="login">
+<div class="login_m">
+<div class="login_boder">
+<form role="form" method="post" action="/login">
+<div class="login_padding" id="login_model">
+ <div class ="logo_title">统一权限认证中心</div>
+ <div class ="logo_name">Advanced Live Production system</div>
+  <h2>请输入用户名:</h2>
+  <label>
+    <input type="text" id="username"  name="username"  class="txt_input txt_input2" onfocus="if (value ==&#39;Your name&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;Your name&#39;}"   required placeholder="用户名/邮箱/手机号" autocomplete="off">
+  </label>
+  <h2>请输入密码:</h2>
+  <label>
+    <input type="password" name="password" id="password" class="txt_input" onfocus="if (value ==&#39;******&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;******&#39;}" required placeholder="密码" autocomplete="off">
+  </label> 
+  <div class="rem_sub">
+ <div class="rem_sub_l" th:classappend="${captchaEnabled==false} ? 'm-t'">
+  <input type="checkbox" name="rememberme" id="rememberme" >
+       <label for="checkbox">Remember me</label>
+   </div>
+      <div class="rem_sub_l" style="float: right;margin-right:20px;">
+          <p > <a class="pull-right" href="">忘记密码？</a></p>
+      </div>
+
+    <label>
+      <input type="submit" class="sub_button" name="btnSubmit" id="btnSubmit"  data-loading="正在验证登录，请稍后..."  value="SIGN-IN" style="opacity: 0.7;"/>
+    </label>
+      
+  </div>
+</div>
+</form>
+
+
+
+
+
+
+<!--login_padding  Sign up end-->
+</div><!--login_boder end-->
+</div><!--login_m end-->
+<div style="color:rgba(255,255,255,0.6);line-height:12px;margin-left: 70%;margin-top: 15%;">
+	<p align="center"> ALPs(Advanced Live Production system)</p>
+	<p align="center" style="margin-top: 5px;">  &copy; 2019 All Rights ITSS-SOFT-SERVICE </p>
+</div>
+<!-- 全局js -->
+<script type="text/javascript" charset="utf-8" src="../static/bootstrap/js/bootstrap.min.js" th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+</body></html>

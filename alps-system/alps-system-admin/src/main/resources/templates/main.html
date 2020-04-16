@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org" style="height: 98%">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>ALPs Main</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+    <script type="text/javascript" src="/echarts/echarts.min.js" ></script>
+	<script type="text/javascript" src="/echarts/echarts.tool.js" ></script>
+	<script type="text/javascript" src="/echarts/ecstat/ecStat.min.js" ></script>
+</head>
+
+<body class="gray-bg">
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="bar" style="width: 33%;height:50%;float: left;"></div>
+    <div id="line" style="width: 33%;height:50%;float: left"></div>
+    <div id="stack" style="width: 33%;height:50%;float: left"></div>
+    <div id="pie" style="width: 33%;height:50%;float: left"></div>
+    <div id="gauge" style="width: 33%;height:50%;float: left"></div>
+    <div id="rader" style="width: 33%;height:50%;float: left"></div>
+    <script type="text/javascript">
+    var _path="#(path)";
+    //柱状图
+    //变量配置
+    var config=echart.config;
+    console.log(config)
+    config.title="周出货量";
+    config.title_x="center";
+    config.color =['#3398DB'];
+    config.subtitle="Weekly shipping data(K/W)";
+    config.legend=['出货'];
+    config.legend_x="left";
+    //config.xName="类型";
+    config.xAxis=["AcNB","AcDT","MNT","AT","Karro","T310"];
+    //config.yName="数量";
+    config.seriesName="出货";
+    config.seriesData=[5, 20, 36, 10, 10, 20];
+    config.divId="bar";
+    echart.bar(config);
+    
+    //折线图
+    config.title="货量趋势";
+    config.subtitle="trend shipping(K/M)";
+    config.legend=['出货'];
+    config.seriesName="出货";
+    config.xAxis=["5月","6月","7月","8月","9月","10月"];
+    config.seriesData=[120,100,150,180,150,200];
+    config.divId="line";
+    echart.line(config);
+    
+    //饼图
+    config.title="生产排配";
+    config.subtitle="trend production(K/M)";
+    config.legend=["AcNB","AcDT","MNT","AT","Karro","T310"];
+    config.Name='生产';
+    config.seriesPieData=[{value:10,name:'AcNB'},{value:10,name:'AcDT'},{value:10,name:'MNT'},
+    	{value:10,name:'AT'},{value:10,name:'Karro'},{value:10,name:'T310'}];
+    config.divId="pie";
+    config.tooltipText="Pcs";
+    echart.pie(config);
+    
+    //折叠柱状图
+    config.title="MMC";
+    config.subtitle="monthly manufacturing capacity";
+    config.color= ['#003366', '#006699', '#4cabce', '#e5323e'];
+    config.legend=['Accy','DT','AT'];
+    config.xAxis=['7月','8月','9月','10月'];
+    config.seriesName="Accy";
+    config.seriesData=[862, 980, 888, 1050];
+    config.stack="DT";
+    config.stackName="DT";
+    config.stackData=[400, 818, 700, 300];
+    config.parallel="AT";
+    config.parallelName="AT";
+    config.parallelData=[462, 200, 318, 646];
+    config.divId="stack";
+    echart.stack(config);
+    
+    //仪表盘
+    config.title="生产驾驶监控";
+    config.subtitle="gauge of production";
+    config.divId="gauge";
+    echart.gauge(config);
+    
+    //仪表盘
+    config.title="生产能力";
+    config.subtitle="production capacity analysis";
+    config.divId="rader";
+    echart.rader(config);
+    
+    </script>
+  
+</body>
+</html>

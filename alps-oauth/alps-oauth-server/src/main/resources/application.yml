@@ -1,0 +1,73 @@
+spring:  
+  datasource: 
+    druid: 
+      url: jdbc:mysql://10.157.137.130:3306/alps_system?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8 
+      username: root
+      password: alpsadmin
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      # 配置获取连接等待超时的时间
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 6000
+    database: 3
+    lettuce:
+      pool:
+        max-active: 10 
+        max-idle: 8   
+        max-wait: 100 
+        min-idle: 2  
+      shutdown-timeout: 100ms
+#redis cluster config
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml 
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#mybatis plus 设置
+
+
+#设置最大容错超时时间
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 90000
+
+
+
+#设置最大容错超时时间
+hystrix:
+  threadpool:
+    default:
+      coreSize: 100
+      maximumSize: 5000
+      allowMaximumSizeToDivergeFromCoreSize: true
+      maxQueueSize: -1
+  command:
+    default:
+      circuitBreaker:
+        forceOpen: false
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 900000
+  
+  
+
+#注册中心指向start 
+#同一服务做负载LB时ID需要不一样，否则eureka会覆盖。   
+eureka:
+  instance:
+    instance-id: oauth2-server
+    appname: ${spring.application.name}
+  client:
+    registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
+    fetchRegistry:  true  #是否从Eureka中获取注册信息，默认为true 
+    service-url: 
+      defaultZone: http://alps:alps$888@127.0.0.1:8888/eureka/
+    eurekaServerConnectTimeoutSeconds: 60
+    eurekaServerReadTimeoutSeconds: 60
+            

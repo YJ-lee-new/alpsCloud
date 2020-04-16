@@ -1,0 +1,43 @@
+server:
+    port: 8500
+    servlet:
+        session:
+            cookie:
+                name: OAUTH2SESSION
+spring:
+    application:
+        name: oauth2-admin
+    main:
+        allow-bean-definition-overriding: true
+    # 解决restful 404错误 spring.mvc.throw-exception-if-no-handler-found=true spring.resources.add-mappings=false
+    
+    #mvc:
+        #throw-exception-if-no-handler-found: true
+    resources:
+        add-mappings: false
+    thymeleaf:
+        cache: false
+        encoding: UTF-8
+        mode: LEGACYHTML5
+        prefix: classpath:/templates/
+        suffix: .html
+
+management:
+    security:
+        enabled: false
+    endpoints:
+        web:
+            exposure:
+                include: '*' #springboot2.X加载所有的端点/默认只加载了 info / health
+    
+alps: 
+    swagger2:
+        enabled: true
+        description: 平台用户认证服务器
+        title: 平台用户认证服务器
+    client:
+        oauth2:
+             admin:
+                  client-id: 6MpsV9S3R8BHxECcE14BRIETiqkxE6k1
+                  client-secret: EZOhaZ77fnxIu3JnxVxPp3susWM8G4Xs
+

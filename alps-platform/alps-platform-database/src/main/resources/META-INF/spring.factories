@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.alps.plaform.database.datasource.DataSourceAutoConfig

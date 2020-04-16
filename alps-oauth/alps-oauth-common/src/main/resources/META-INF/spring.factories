@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration= com.alps.common.oauth2.config.AlpsCommonProperties,\
+  com.alps.common.oauth2.config.AlpsIdGenProperties,\
+  com.alps.common.oauth2.config.AlpsScanProperties,\
+  com.alps.common.oauth2.autoconfig.AutoConfiguration,\
+  com.alps.common.oauth2.autoconfig.FeignAutoConfiguration,\
+  com.alps.common.oauth2.autoconfig.MqAutoConfiguration,\
+  com.alps.common.oauth2.autoconfig.SwaggerAutoConfiguration,\
+  com.alps.common.oauth2.autoconfig.WebMvcConfiguration
+  

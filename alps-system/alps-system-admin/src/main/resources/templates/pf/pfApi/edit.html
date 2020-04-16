@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<th:block th:include="include :: header('修改pf_api')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-pfApi-edit" th:object="${pfApi}">
+            <input id="apiId" name="apiId" th:field="*{apiId}"  type="hidden">
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">app名称：</label>
+				<div class="col-sm-8">
+					<input id="appId" name="appId" th:field="*{appId}" class="form-control" type="text" disabled="disabled">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">API名称：</label>
+				<div class="col-sm-8">
+					<input id="apiName" name="apiName" th:field="*{apiName}" class="form-control" type="text" required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">对外提供服务的URL：</label>
+				<div class="col-sm-8">
+					<input id="apiUrl" name="apiUrl" th:field="*{apiUrl}" class="form-control" type="text" required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">逻辑流描述/API描述：</label>
+				<div class="col-sm-8">
+					<input id="apiDesc" name="apiDesc" th:field="*{apiDesc}" class="form-control" type="text" required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">方法名：</label>
+				<div class="col-sm-8">
+					<input id="methodName" name="methodName" th:field="*{methodName}" class="form-control" type="text" required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">是否有效：</label>
+				<div class="col-sm-8">
+				    <div class="radio-box" th:each="dict : ${@dict.getType('sys_stutus_flag')}">
+						<input type="radio" th:id="${dict.dictCode}" name="status" th:value="${dict.dictValue}" th:checked="${dict.isDefault == 'Y' ? true : false}">
+						<label th:for="${dict.dictCode}" th:text="${dict.dictLabel}"></label>
+					</div>
+				</div>
+			</div>
+		</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "pf/pfApi";
+		$("#form-pfApi-edit").validate({
+			rules:{
+				xxxx:{
+					required:true,
+				},
+			},
+			focusCleanup: true
+		});
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-pfApi-edit').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>

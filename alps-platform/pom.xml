@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>alps-platform</groupId>
+  <artifactId>alps-platform</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>alps-platform</name>
+  <description>alps-platform</description>
+  
+  <parent>
+    <groupId>alps</groupId>
+	<artifactId>alps</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modules>
+  	<module>alps-platform-common</module>
+  	<module>alps-platform-database</module>
+  	<module>alps-platform-redis</module>
+  	<module>alps-platform-log</module>
+  </modules>
+</project>

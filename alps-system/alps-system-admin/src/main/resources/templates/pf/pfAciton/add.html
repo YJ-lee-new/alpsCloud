@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<th:block th:include="include :: header('新增action')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-pfAciton-add">
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">事件/action名称：</label>
+				<div class="col-sm-8">
+					<input id="actionCode" name="actionCode" class="form-control" type="text" required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">事件中英文名字：</label>
+				<div class="col-sm-8">
+					<input id="actionNameEn" name="actionNameEn" class="form-control" type="text"  required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">事件中文名字：</label>
+				<div class="col-sm-8">
+					<input id="actionNameCn" name="actionNameCn" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">事件繁体中文名字：</label>
+				<div class="col-sm-8">
+					<input id="actionNameTw" name="actionNameTw" class="form-control" type="text">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">动作描述：</label>
+				<div class="col-sm-8">
+					<input id="actionDesc" name="actionDesc" class="form-control" type="text"  required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">对应的API：</label>
+				<div class="col-sm-8">
+					 <select id="apiId" name="apiId" class="form-control select2-multiple"   required="required">
+					            <option value="">----</option>
+								<option th:each="app:${apiList}" th:value="${app.apiId}" th:text="${app.apiShow}" ></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">是否有效：</label>
+				<div class="col-sm-8">
+				    <div class="radio-box" th:each="dict : ${@dict.getType('sys_stutus_flag')}">
+						<input type="radio" th:id="${dict.dictCode}" name="status" th:value="${dict.dictValue}" th:checked="${dict.isDefault == 'Y' ? true : false}">
+						<label th:for="${dict.dictCode}" th:text="${dict.dictLabel}"></label>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "pf/pfAciton"
+		$("#form-pfAciton-add").validate({
+			rules:{
+				xxxx:{
+					required:true,
+				},
+			},
+			focusCleanup: true
+		});
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/add", $('#form-pfAciton-add').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>

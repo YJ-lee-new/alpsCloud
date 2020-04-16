@@ -1,0 +1,83 @@
+#gateway config 越在前面优先级越高,id用来区分不同的路由规则,不可重复。uri指需要跳转的地址。Predicates可以配置多个,使用正则匹配。
+spring:
+  cloud:
+     gateway:
+       discovery:
+         locator:
+           lowerCaseServiceId: true
+           enabled: true
+       routes:        
+        - id: 6MpsV9S3R8BHxECcE14BRIETiqkxE6k1
+          uri: lb://oauth2-admin
+          order: 101
+          predicates:
+          - Path=/oauth/**   
+          filters:
+          - AlpsSwaggerHeaderFilter
+          - StripPrefix=1 
+          - name: Hystrix
+            args:
+              name : default
+              fallbackUri: 'forward:/defaultfallback'
+          - name: RequestRateLimiter
+            args:
+              redis-rate-limiter.replenishRate: 1  # 令牌桶的容积
+              redis-rate-limiter.burstCapacity: 3  # 流速 每秒
+              key-resolver: "#{@ipAddressKeyResolver}" #SPEL表达式去的对应的bean      
+        - id: sysPro
+          uri: lb://sysPro
+          order: 104
+          predicates:
+          - Path=/system/**
+          filters:
+          - AlpsSwaggerHeaderFilter
+          - StripPrefix=1
+          - name: Hystrix
+            args:
+              name : default
+              fallbackUri: 'forward:/defaultfallback'
+          - name: RequestRateLimiter
+            args:
+              redis-rate-limiter.replenishRate: 1  # 令牌桶的容积
+              redis-rate-limiter.burstCapacity: 3  # 流速 每秒
+              key-resolver: "#{@ipAddressKeyResolver}" #SPEL表达式去的对应的bean
+        - id: basePro
+          uri: lb://basePro
+          order: 105
+          predicates:
+          - Path=/basePro/**
+          filters:
+          - AlpsSwaggerHeaderFilter
+          - StripPrefix=1
+          - name: Hystrix
+            args:
+              name : default
+              fallbackUri: 'forward:/defaultfallback'
+          - name: RequestRateLimiter
+            args:
+              redis-rate-limiter.replenishRate: 1  # 令牌桶的容积
+              redis-rate-limiter.burstCapacity: 3  # 流速 每秒
+              key-resolver: "#{@ipAddressKeyResolver}" #SPEL表达式去的对应的bean
+        - id: bsPro
+          uri: lb://bsPro
+          order: 106
+          predicates:
+          - Path=/bsPro/**
+          filters:
+          - AlpsSwaggerHeaderFilter
+          - StripPrefix=1
+          - name: Hystrix
+            args:
+              name : default
+              fallbackUri: 'forward:/defaultfallback'
+          - name: RequestRateLimiter
+            args:
+              redis-rate-limiter.replenishRate: 1  # 令牌桶的容积
+              redis-rate-limiter.burstCapacity: 3  # 流速 每秒
+              key-resolver: "#{@ipAddressKeyResolver}" #SPEL表达式去的对应的bean
+
+security:
+  oauth2:
+    ignored:  /file/**,/test163/** , /api-auth/** , /doc.html ,/test111 ,/api-user/users-anon/login,/user-center/users-anon/login,\
+              /document.html,**/v2/api-docs,/oauth/** ,/login.html ,/user/login,/**/**.css ,/**/**.js,/apiinfo/**,/basePro/**"
+              

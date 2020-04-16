@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+# 2.X以下版本不需要spring
+spring:
+  application:
+    name: eurka-server
+  security: 
+    basic: 
+        enable: true
+    user: 
+        name: alps
+        password: alps$888
+          
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #自己注册到Eureka Server，默认为true
+    register-with-eureka: false
+    #是否从Eureka Server获取注册信息，默认为true。
+    fetch-registry: false
+    service-url: 
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/    

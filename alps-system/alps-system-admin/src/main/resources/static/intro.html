@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>alps介绍</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
+    <link href="/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+</head>
+
+<body class="gray-bg">
+<div style="width: 100%;height:100px;background-color: #0e6bc0; text-align: center;">
+  <span style="font-weight:800;color:rgba(255,255,255,1);font-size: 25PX; width: 100%;margin-top: 10px;">ITSS-Service团队竭诚为您提供以下解决方案</span>
+   <div  style="width: 100%;color:#35b8fa;float:left;margin-top: 10px;">
+        <p style="width:10%;float:left;"></p>
+         <p style="width:20%;float:left;color:rgba(255,255,255,1);font-size: 18PX;"><i class="fa fa-mobile"></i> 组装工厂智能解决方案</p>
+        <p style="width:20%;float:left;color:rgba(255,255,255,1);font-size: 18PX;"><i class="fa fa-mobile"></i> 移动解决方案</p>
+        <p style="width:20%;float:left;color:rgba(255,255,255,1);font-size: 18PX;"><i class="fa fa-mobile"></i> 售后解决方案</p>
+        <p style="width:20%;float:left;color:rgba(255,255,255,1);font-size: 18PX;"><i class="fa fa-mobile"></i> 流程及文件解决方案</p>
+        <p style="width:10%;float:left;"></p>
+    </div>
+
+</div>
+    <div class="row  border-bottom white-bg dashboard-header">
+        <div class="col-sm-12">
+            <blockquote  style="font-size:14px">
+                       <h4 class="text-danger">欢迎使用ALPs 管理系统！稳健，灵活，速度是我们追求的目标</h4>
+                        <h2>Advanced Live Production system</h2>
+            </blockquote>
+        </div>
+
+    </div>
+      <div class="row  border-bottom white-bg dashboard-header">
+        <div class="col-sm-12">
+             <p><i class="fa fa-send-o"></i>  ALPs是基于微服务搭建，并符合ISA-95标准，面向型企业提供一整套Service解决方案。并专注于电子3C产品的组装，贸易加工，以及整套换/维修服务.
+             <p><i class="fa fa-send-o"></i>  ALPs基于云平台服务，能保证其高效性，稳定性，安全性。其以微服务模块化运行，目前提供:生产建模，管理驾驶舱，生产车间管理，工艺管理，品质管理，系统集成，可视化模块。为快速的搭建/重组业务提供了更多选择。
+             <p><i class="fa fa-send-o"></i>  ALPs还提供多终端化支技：Web，Client，移动端。一次导入，全面管理。 
+        </div>
+
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row">
+         <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>技术支持：</h5>
+                        <br>
+                        <h6>针对以下开源框构的作者及贡献者深表敬意与感谢!</h6>
+                    </div>
+                    <div class="ibox-content">
+		            <ol>
+		                <li>核心框架：SpringBoot</li>
+		                <li>安全框架：Apache Shiro。</li>
+		                <li>APS智能引擎：OtPlanner。</li>
+		                <li>规则引擎：Drools。</li>
+		                <li>分布式事务：atomikos。</li>
+		                <li>模板引擎：Thymeleaf。</li>
+		                <li>持久层框架：MyBatis。</li>
+						<li>定时任务:Quartz + Hangfire</li>
+		                <li>数据库连接池：Druid。</li>
+		                <li>工具类：Fastjson。</li>
+		                <li>UI框架：bootstrap/Layui。</li>
+		                <li>項目管理：Maven。</li>
+		                <li>分页插件：Pagehlep。</li>
+		                <li>更多……</li>
+		            </ol>
+
+                    </div>
+                </div>
+          </div>
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>更新日志</h5>
+                    </div>
+                    <div class="ibox-content no-padding">
+                        <div class="panel-body">
+                            <div class="panel-group" id="version">
+                            
+                             <div class="panel panel-default">
+								<div class="panel-heading">
+								   <h5 class="panel-title">
+									   <a data-toggle="collapse" data-parent="#version" href="#v05">v0.1.1</a><code class="pull-right">2019.09.09</code>
+								   </h5>
+								</div>
+								<div id="v05" class="panel-collapse collapse in">
+									<div class="panel-body">
+									   <ol>
+											<li>变更产品名为:ALPs: Advanced Live Production system</li>
+											<li>变更产品相关介绍及Logo</li>
+											<li>变更首页及并引入可视化报表</li>
+											<li>集成ACE及相关服务</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+							
+                             <div class="panel panel-default">
+								<div class="panel-heading">
+								   <h5 class="panel-title">
+									   <a data-toggle="collapse" data-parent="#version" href="#v04">v0.1.1</a><code class="pull-right">2019.07.09</code>
+								   </h5>
+								</div>
+								<div id="v04" class="panel-collapse collapse">
+									<div class="panel-body">
+									   <ol>
+											<li>引入Mybatis pageHlper对多数据厂商(MysqL,Sql Server,Oracle,DB2等主流数据库)动态分页语法支持</li>
+											<li>导入Hangfire Support .net与Quartz支持Java</li>
+											<li>开发搭建Client端,以支持工厂操作的习惯与效率</li>
+											<li>增加Label控制/设计与打印组件</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+                            
+                             <div class="panel panel-default">
+								<div class="panel-heading">
+								   <h5 class="panel-title">
+									   <a data-toggle="collapse" data-parent="#version" href="#v03">v0.1.0</a><code class="pull-right">2019.05.03</code>
+								   </h5>
+								</div>
+								<div id="v03" class="panel-collapse collapse">
+									<div class="panel-body">
+									   <ol>
+											<li>Leopards 框架正式版V0.1.0发布</li>
+											<li>采用多module微服务架构</li>
+											<li>基础功能完善</li>
+											<li>引入AOP动态切换数据源</li>
+											<li>变更数据针对Module与Method进行Annotation</li>
+											<li>调整架构以适应后续多租户模型</li>
+											<li>调整架构满足:云,集群,分布式要求!同时改名Leopards(豹群)简称不变,中文名不变:立配得(LPD)</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">
+											<a data-toggle="collapse" data-parent="#version" href="#v02">v0.0.5</a><code class="pull-right">2019.04.28</code>
+										</h5>
+                                    </div>
+                                    <div id="v02" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ol>
+                                                <li>定义系统目标为快速,独立,稳健.因与猎豹特点吻合,故改名名:leopard,简写(LPD)</li>
+                                                <li>同时取leopard谐音"立配得"为产品中文名.预意:立(即)实现;所(配)及所(得)</li>
+                                            	<li>新增系统管理模组(用户,权限,部门,角色等功能)</li>
+                                                <li>增加监控</li>
+												<li>增加模板功能</li>
+												<li>增加Job功能</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                              <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">
+											<a data-toggle="collapse" data-parent="#version" href="#v01">v0.0.1</a><code class="pull-right">2019.04.20</code>
+										</h5>
+                                    </div>
+                                    <div id="v01" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ol>
+                                            	<li>为Service系统升级及整合,开始着手设计</li>
+                                                <li>规划提供整套的云服务,智能服务,故取名为:CSS(Cloud Smart Service)</li>
+                                                <li>设置Logo及功能布局图</li>
+												<li>雏形发布v0.0.1</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ <div class="col-sm-4">
+
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>联系信息</h5>
+
+                    </div>
+                    <div class="ibox-content">
+                        <p><i class="fa fa-send-o"></i> 产品名称：Advanced Live Production system
+                        </p>
+                        <p><i class="fa fa-mobile"></i> 分机：567-85020
+                        </p>
+                        <p><i class="fa fa-weixin"></i> 微信：13971434393
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script type="text/javascript" src="js/jquery.min.js" ></script>
+     <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+     <script type="text/javascript" src="ajax/libs/layer/layer.min.js" ></script>
+     <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript">
+	    $('#pay-qrcode').click(function(){
+	        var html=$(this).html();
+	        parent.layer.open({
+	            title: false,
+	            type: 1,
+	            closeBtn:false,
+	            shadeClose:true,
+	            area: ['600px', 'auto'],
+	            content: html
+	        });
+	    });
+    </script>
+</body>
+</html>

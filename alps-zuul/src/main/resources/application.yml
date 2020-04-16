@@ -1,0 +1,104 @@
+server:
+  port: 8300
+ 
+spring:
+  application:
+    name: apls-zuul
+  redis:
+    host: localhost
+    port: 6379
+#   password: 123456
+  main:
+      allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
+  #zipKin 指向
+  zipkin:
+      base-url: http://localhost:9411
+      enabled: true 
+  sleuth: 
+      web:
+        client:
+          enabled: true
+      sampler: 
+        probability: 1.0  #zipkin采集率  0.1表示 10%采集
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    password: guest
+    username: guest
+    listener:
+     direct:
+       retry:
+        enabled: true
+     simple:
+       retry:
+        enabled: true
+  queue: zipkin
+
+feign.hystrix.enabled: true
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 100000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+  
+ 
+##注册中心指向start    
+eureka:
+  instance:
+    instance-id: apls-zuul
+    appname: ${spring.application.name}
+  client: 
+    service-url: 
+      defaultZone: http://alps:alps$888@127.0.0.1:8888/eureka/
+      
+#zuul:
+#关闭统一前缀  prefix: /alps
+#  routes:
+#    alps-web:
+#      path: /web/**
+#      serviceId: alpsWeb  
+#    docs:
+#      url: http://10.202.86.138:8001/
+      
+#    alps-app:
+#      path: /app/**
+#      serviceId: webPro
+#    alps-file:
+#      path: /file/**
+#      serviceId: alpsfile
+#  ignored-services: "*"
+#  add-host-header: true
+#  sensitive-headers: "*"
+#  retryable: true
+  
+  
+zuul:
+  routes:
+    system-service:
+      path: /system/** #配置请求URL的请求规则
+      serviceId: sysPro
+    alps-web:
+      path: /web/**
+      serviceId: webPro
+    file-service:
+      path: /file/**
+      serviceId: alpsFile
+  ignored-services: "*"
+  add-host-header: true
+  sensitive-headers: "*"
+  retryable: true
+  
+  
+  
+  
+  
+  
+  #不走校验的连接
+webpageurl: http://localhost:8320

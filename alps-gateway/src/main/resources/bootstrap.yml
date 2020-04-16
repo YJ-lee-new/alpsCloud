@@ -1,0 +1,23 @@
+#端口
+server:
+  port: 9200
+
+#服务名称
+spring:
+  application:
+      name: alps-gateway
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册  
+ 
+# 动态路由暴露端点 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+ 
+
+ 

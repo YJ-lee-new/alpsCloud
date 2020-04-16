@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="alps-cloud系统统一认证平台">
+    <title>alps-cloud统一授权</title>
+   <link href="../static/css/alps/style_log.css"  th:href="@{/static/css/alps/style_log.css?v1}" rel="stylesheet" type="text/css"/>
+   <link href="../static/css/alps/style.css"  th:href="@{/static/css/alps/style.css}" rel="stylesheet" type="text/css"/>
+   <link href="../static/css/alps/userpanel.css"  th:href="@{/static/css/alps/userpanel.css}" rel="stylesheet" type="text/css"/>
+   
+    <link rel="shortcut icon" href="../static/favicon.png"/>
+    <style type="text/css">label.error { position:inherit;  }</style>
+    <script>
+        if(window.top!==window.self){window.top.location=window.location};
+    </script>
+</head>
+
+<body style="background-color: #f3f3f4;">
+<div style="background-color:#367fa9; height: 500px; width:350px;;margin-left:40%;margin-top:20px; text-align: center;">
+   <div style="background-color:#2f4050;height: 65px;font-family: PingFangSC-Semibold,PingFangSC;font-size: 28px;font-weight: 800;color: #a7b1c2;line-height: 60px;">alps-cloud 第三方授权</div> 
+   <form id='confirmationForm' name='confirmationForm' th:action="@{/oauth/authorize}" method='post'>
+        <input name='user_oauth_approval' value='true' type='hidden' />
+		<div style="margin-top: 25px;">
+		 <div style="font-family: PingFangSC-Semibold,PingFangSC;font-size: 14px;font-weight: 500;color: #fff">第三方应用:
+		 <a style="color: #ed5565;font-size: 30px;font-weight:600;" th:href="${app.website}"  target="_blank" th:text="${app.appName}"></a>	将获取您以下信息 </div>
+		    <div style="margin-top: 20px;">
+		       <ul >
+		           <li> 
+		             <span style="color: #f8ac59;font-size: 15px;font-weight:400;">
+		                <input type="hidden"  th:name="${s.key}" value="true"  th:each="s : ${scopes}" />
+		                <input type="checkbox" disabled checked="checked"  th:each="s : ${scopes}" />
+		                 <label th:each="s : ${scopes}"> 头像,电话,账号信息</label>
+		             </span>
+		           </li>
+		        </ul>
+		    </div>
+		  <div >
+		    <label>
+		      <input  type="submit"  name="btnSubmit" id="btnSubmit"   value="同意授权" style="margin-top: 25px; width: 95px;height: 40px;
+				    background: linear-gradient(180deg,rgba(37,147,201,1) 0%,#096cc4 100%);
+				    border-radius: 6px;
+				    border: 1px solid #105A98;
+				    color: rgba(255,255,255,1);
+				    line-height: 30px;
+				    font-size: 16px;cursor: pointer; "/>
+		    </label>
+		  </div>    
+		</div>
+	</form>
+</div><!--login_m end-->
+
+
+
+
+
+
+
+<!--login_padding  Sign up end-->
+<div style="color:rgba(255,255,255,0.6);line-height:12px;margin-left: 70%;margin-top: 15%;">
+	<p align="center"> ALPs(Advanced Live Production system)</p>
+	<p align="center" style="margin-top: 5px;">  &copy; 2019 All Rights ITSS-SOFT-SERVICE </p>
+</div>
+<!-- 全局js -->
+<script type="text/javascript" charset="utf-8" src="../static/bootstrap/js/bootstrap.min.js" th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+</body></html>
