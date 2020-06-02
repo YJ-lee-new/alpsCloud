@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import com.alps.common.constant.BaseConstants;
 
-import com.alps.base.api.service.IBaseAuthorityServiceClient;
+import com.alps.base.api.service.ISysAuthorityServiceClient;
 /**
  * @author:Yujie.lee
  * Date:2019年12月7日
@@ -12,7 +12,7 @@ import com.alps.base.api.service.IBaseAuthorityServiceClient;
  */
 @Component
 @FeignClient(value = BaseConstants.OAUTH2_SERVER)
-public interface BaseAuthorityServiceClient extends IBaseAuthorityServiceClient {
+public interface BaseAuthorityServiceClient extends ISysAuthorityServiceClient {
 
 
 }

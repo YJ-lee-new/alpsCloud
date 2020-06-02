@@ -1,0 +1,141 @@
+15:35:44.144 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$56d2530f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:35:45.430 [main] INFO  c.a.o.s.OauthServerApplication - [logStartupProfileInfo,646] - No active profile set, falling back to default profiles: default
+15:36:03.625 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [multipleStoresDetected,244] - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:36:03.682 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,126] - Bootstrapping Spring Data repositories in DEFAULT mode.
+15:36:04.169 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,182] - Finished Spring Data repository scanning in 245ms. Found 0 repository interfaces.
+15:36:08.102 [main] INFO  o.s.c.c.s.GenericScope - [setSerializationId,295] - BeanFactory id=34ab8879-529a-3a0d-b59e-9841c00a8a43
+15:36:08.437 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerErrorChannel,193] - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+15:36:08.553 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerTaskScheduler,280] - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+15:36:08.703 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerHeaderChannelRegistry,431] - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+15:36:11.566 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3ab85012] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:36:12.159 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:36:12.577 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$a5aa0b41] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:36:12.709 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$813c1661] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:36:12.823 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$ba23bf2e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:36:12.914 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:36:13.224 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$56d2530f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:36:17.478 [main] INFO  o.s.b.w.e.t.TomcatWebServer - [initialize,90] - Tomcat initialized with port(s): 8600 (http)
+15:36:17.628 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8600"]
+15:36:17.667 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+15:36:17.672 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.21]
+15:36:18.829 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+15:36:18.834 [main] INFO  o.s.w.c.ContextLoader - [prepareWebApplicationContext,283] - Root WebApplicationContext: initialization completed in 33127 ms
+15:36:19.943 [main] INFO  c.n.c.s.URLConfigurationSource - [<init>,122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+15:36:20.076 [main] INFO  c.n.c.DynamicPropertyFactory - [getInstance,281] - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@47f39279
+15:36:31.745 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+15:36:34.282 [main] INFO  c.a.d.p.DruidDataSource - [init,991] - {dataSource-1} inited
+15:36:38.062 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - [initialize,171] - Initializing ExecutorService 'taskScheduler'
+15:36:44.642 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - [shutdown,208] - Shutting down ExecutorService 'taskScheduler'
+15:36:44.721 [main] INFO  c.a.d.p.DruidDataSource - [close,1928] - {dataSource-1} closed
+15:36:44.967 [main] INFO  o.a.c.c.StandardService - [log,173] - Stopping service [Tomcat]
+15:36:45.019 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - [logMessage,135] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:39:12.017 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bba5aa6e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:13.014 [main] INFO  c.a.o.s.OauthServerApplication - [logStartupProfileInfo,646] - No active profile set, falling back to default profiles: default
+15:39:25.669 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [multipleStoresDetected,244] - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:39:25.723 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,126] - Bootstrapping Spring Data repositories in DEFAULT mode.
+15:39:26.229 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,182] - Finished Spring Data repository scanning in 223ms. Found 0 repository interfaces.
+15:39:29.966 [main] INFO  o.s.c.c.s.GenericScope - [setSerializationId,295] - BeanFactory id=34ab8879-529a-3a0d-b59e-9841c00a8a43
+15:39:30.208 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerErrorChannel,193] - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+15:39:30.297 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerTaskScheduler,280] - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+15:39:30.432 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerHeaderChannelRegistry,431] - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+15:39:33.163 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9f8ba771] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:33.711 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:34.084 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$a7d62a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:34.229 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$e60f6dc0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:34.331 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$1ef7168d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:34.412 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:34.758 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$bba5aa6e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:39:38.650 [main] INFO  o.s.b.w.e.t.TomcatWebServer - [initialize,90] - Tomcat initialized with port(s): 8600 (http)
+15:39:38.797 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8600"]
+15:39:38.837 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+15:39:38.847 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.21]
+15:39:40.005 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+15:39:40.009 [main] INFO  o.s.w.c.ContextLoader - [prepareWebApplicationContext,283] - Root WebApplicationContext: initialization completed in 26848 ms
+15:39:41.000 [main] INFO  c.n.c.s.URLConfigurationSource - [<init>,122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+15:39:41.127 [main] INFO  c.n.c.DynamicPropertyFactory - [getInstance,281] - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@602aeb87
+15:39:51.811 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+15:39:54.255 [main] INFO  c.a.d.p.DruidDataSource - [init,991] - {dataSource-1} inited
+15:39:58.465 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - [initialize,171] - Initializing ExecutorService 'taskScheduler'
+15:40:06.916 [main] INFO  c.a.c.o.a.AutoConfiguration - [alpsRestTemplate,132] - AlpsRestTemplate [com.alps.common.oauth2.constants.AlpsRestTemplate@547aa7f4]
+15:40:10.573 [main] INFO  c.a.o.s.s.IpRegionService - [init,36] - init ip region db path [O:\2020git\alpsCloud\alps-oauth\alps-oauth-server\temp\ip2region.db]
+15:40:14.020 [main] INFO  c.a.o.s.s.IpRegionService - [init,41] - bean [org.lionsoul.ip2region.DbConfig@4f6f7a86]
+15:40:14.024 [main] INFO  c.a.o.s.s.IpRegionService - [init,42] - bean [org.lionsoul.ip2region.DbSearcher@6ed78a5e]
+15:40:15.689 [main] INFO  c.n.c.s.URLConfigurationSource - [<init>,122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+15:40:17.702 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - [initialize,171] - Initializing ExecutorService 'applicationTaskExecutor'
+15:40:18.930 [main] INFO  c.a.c.o.a.AutoConfiguration - [springContextHolder,75] - SpringContextHolder [com.alps.common.oauth2.utils.SpringContextHolder@7da6e22a]
+15:40:18.960 [main] INFO  c.a.c.o.a.AutoConfiguration - [exceptionHandler,88] - AlpsGlobalExceptionHandler [com.alps.common.oauth2.exception.AlpsGlobalExceptionHandler@7db57566]
+15:40:19.018 [main] INFO  c.a.c.o.a.AutoConfiguration - [snowflakeIdWorker,102] - SnowflakeIdGenerator [com.alps.common.oauth2.constants.SnowflakeIdGenerator@4001a5a1]
+15:40:19.048 [main] INFO  c.a.c.o.a.AutoConfiguration - [resourceAnnotationScan,116] - RequestMappingScan [com.alps.common.oauth2.constants.RequestMappingScan@16dc12cf]
+15:40:19.092 [main] INFO  c.a.c.o.a.AutoConfiguration - [restTemplate,141] - RestTemplate [org.springframework.web.client.RestTemplate@5bbd8118]
+15:40:19.584 [main] INFO  c.a.c.o.a.FeignAutoConfiguration - [feignFormEncoder,30] - FeignSpringFormEncoder [com.alps.common.oauth2.autoconfig.FeignSpringFormEncoder@69c03fa2]
+15:40:19.630 [main] INFO  c.a.c.o.a.FeignAutoConfiguration - [feignRequestInterceptor,38] - FeignRequestInterceptor [com.alps.common.oauth2.feign.FeignRequestInterceptor@2a7ed9bd]
+15:40:19.779 [main] INFO  c.a.c.o.a.MqAutoConfiguration - [apiResourceQueue,26] - Query cloud.scan.api.resource [Queue [name=cloud.scan.api.resource, durable=true, autoDelete=false, exclusive=false, arguments={}, actualName=cloud.scan.api.resource]]
+15:40:19.828 [main] INFO  c.a.c.o.a.MqAutoConfiguration - [accessLogsQueue,33] - Query cloud.access.logs [Queue [name=cloud.access.logs, durable=true, autoDelete=false, exclusive=false, arguments={}, actualName=cloud.access.logs]]
+15:40:24.240 [main] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - [getOrDeducePassword,82] - 
+
+Using generated security password: 33f9e558-99f1-4e3b-8654-b9a73754452d
+
+15:40:25.322 [main] INFO  c.a.c.o.s.AlpsHelper - [buildRedisTokenServices,231] - buildRedisTokenServices[com.alps.common.oauth2.security.AlpsRedisTokenService@1c586bb6]
+15:40:25.519 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/error'], []
+15:40:25.524 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/login2'], []
+15:40:25.528 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/static/**'], []
+15:40:25.533 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/v2/api-docs/**'], []
+15:40:25.534 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/swagger-resources/**'], []
+15:40:25.538 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/webjars/**'], []
+15:40:25.540 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/favicon.png/'], []
+15:40:25.541 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/favicon.ico'], []
+15:40:25.805 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17a5cb99, org.springframework.security.web.context.SecurityContextPersistenceFilter@58581ab6, org.springframework.security.web.header.HeaderWriterFilter@1026a011, org.springframework.security.web.authentication.logout.LogoutFilter@31c87223, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@95f61c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33dcbdc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b09fcda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@808fa1, org.springframework.security.web.session.SessionManagementFilter@6f636de3, org.springframework.security.web.access.ExceptionTranslationFilter@293ccbdd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33c976b1]
+15:40:25.871 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4001dc35, org.springframework.security.web.context.SecurityContextPersistenceFilter@37635407, org.springframework.security.web.header.HeaderWriterFilter@173039b5, org.springframework.security.web.csrf.CsrfFilter@75fb04ee, org.springframework.security.web.authentication.logout.LogoutFilter@12568b11, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@473e0536, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6b5dc4bb, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@399ef33f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@44d5a0a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33822750, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25e95d04, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39b752f4, org.springframework.security.web.session.SessionManagementFilter@6005cfe5, org.springframework.security.web.access.ExceptionTranslationFilter@62048ab, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@472d201]
+15:40:28.603 [main] INFO  o.s.b.a.e.w.EndpointLinksResolver - [<init>,58] - Exposing 24 endpoint(s) beneath base path '/actuator'
+15:40:32.534 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-server-1.springCloudBusInput' has 1 subscriber(s).
+15:40:33.508 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel nullChannel
+15:40:33.653 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel errorChannel
+15:40:34.129 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBusOutput
+15:40:34.309 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBusInput
+15:40:34.356 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerHandler,785] - Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@793c2cde
+15:40:34.868 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerHandler,785] - Registering MessageHandler errorLogger
+15:40:35.007 [main] INFO  o.s.i.e.EventDrivenConsumer - [logComponentSubscriptionEvent,107] - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+15:40:35.016 [main] INFO  o.s.i.c.PublishSubscribeChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-server-1.errorChannel' has 1 subscriber(s).
+15:40:35.019 [main] INFO  o.s.i.e.EventDrivenConsumer - [start,159] - started _org.springframework.integration.errorLogger
+15:40:37.262 [main] INFO  o.s.a.r.c.CachingConnectionFactory - [createBareConnection,460] - Attempting to connect to: [localhost:5672]
+15:40:38.866 [main] INFO  o.s.a.r.c.CachingConnectionFactory - [createBareConnection,496] - Created new connection: rabbitConnectionFactory#52667676:0/SimpleConnection@12136fc6 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 15387]
+15:40:39.225 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-server-1.springCloudBusOutput' has 1 subscriber(s).
+15:40:39.296 [main] INFO  o.s.c.n.e.InstanceInfoFactory - [create,72] - Setting initial instance status as: STARTING
+15:40:39.564 [main] INFO  c.n.d.DiscoveryClient - [<init>,365] - Initializing Eureka in region us-east-1
+15:40:40.510 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,70] - Using JSON encoding codec LegacyJacksonJson
+15:40:40.516 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,71] - Using JSON decoding codec LegacyJacksonJson
+15:40:41.655 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,80] - Using XML encoding codec XStreamXml
+15:40:41.663 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,81] - Using XML decoding codec XStreamXml
+15:40:43.582 [main] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:40:43.925 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,976] - Disable delta property : false
+15:40:43.929 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,977] - Single vip registry refresh property : null
+15:40:43.935 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,978] - Force full registry fetch : false
+15:40:43.938 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,979] - Application is null : false
+15:40:43.943 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,980] - Registered Applications size is zero : true
+15:40:43.945 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,982] - Application version is -1: true
+15:40:43.950 [main] INFO  c.n.d.DiscoveryClient - [getAndStoreFullRegistry,1065] - Getting all instance registry info from the eureka server
+15:40:46.007 [main] INFO  c.n.d.DiscoveryClient - [getAndStoreFullRegistry,1074] - The response status is 200
+15:40:46.028 [main] INFO  c.n.d.DiscoveryClient - [initScheduledTasks,1288] - Starting heartbeat executor: renew interval is: 30
+15:40:46.043 [main] INFO  c.n.d.InstanceInfoReplicator - [<init>,60] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+15:40:46.071 [main] INFO  c.n.d.DiscoveryClient - [<init>,465] - Discovery Client initialized at timestamp 1590824446065 with initial instances count: 2
+15:40:46.093 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [register,41] - Registering application OAUTH2-SERVER with eureka with status UP
+15:40:46.095 [main] INFO  c.n.d.DiscoveryClient - [notify,1323] - Saw local status change event StatusChangeEvent [timestamp=1590824446095, current=UP, previous=STARTING]
+15:40:46.114 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - [register,844] - DiscoveryClient_OAUTH2-SERVER/oauth2-server: registering service...
+15:40:46.216 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner - [doProvisionConsumerDestination,168] - declaring queue for inbound: springCloudBus.anonymous.PLQrz4AiSOuGIs1vCvx2lQ, bound to: springCloudBus
+15:40:46.384 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBus.anonymous.PLQrz4AiSOuGIs1vCvx2lQ.errors
+15:40:46.409 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - [register,853] - DiscoveryClient_OAUTH2-SERVER/oauth2-server - registration status: 204
+15:40:47.174 [main] INFO  o.s.c.s.b.BinderErrorChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-server-1.springCloudBus.anonymous.PLQrz4AiSOuGIs1vCvx2lQ.errors' has 1 subscriber(s).
+15:40:47.186 [main] INFO  o.s.c.s.b.BinderErrorChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-server-1.springCloudBus.anonymous.PLQrz4AiSOuGIs1vCvx2lQ.errors' has 2 subscriber(s).
+15:40:47.412 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter - [start,159] - started inbound.springCloudBus.anonymous.PLQrz4AiSOuGIs1vCvx2lQ
+15:40:47.569 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8600"]
+15:40:47.874 [main] INFO  o.s.b.w.e.t.TomcatWebServer - [start,202] - Tomcat started on port(s): 8600 (http) with context path ''
+15:40:47.878 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - [onApplicationEvent,145] - Updating port to 8600
+15:40:47.884 [main] INFO  c.a.o.s.OauthServerApplication - [logStarted,59] - Started OauthServerApplication in 105.323 seconds (JVM running for 109.765)
+15:41:23.119 [http-nio-8600-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:41:23.123 [http-nio-8600-exec-1] INFO  o.s.w.s.DispatcherServlet - [initServletBean,524] - Initializing Servlet 'dispatcherServlet'
+15:41:23.176 [http-nio-8600-exec-1] INFO  o.s.w.s.DispatcherServlet - [initServletBean,546] - Completed initialization in 49 ms
+15:41:30.417 [http-nio-8600-exec-1] INFO  i.l.c.EpollProvider - [<clinit>,68] - Starting without optional epoll library
+15:41:30.459 [http-nio-8600-exec-1] INFO  i.l.c.KqueueProvider - [<clinit>,70] - Starting without optional kqueue library
+15:45:44.681 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration

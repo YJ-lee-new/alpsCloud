@@ -9,15 +9,12 @@
   <artifactId>alps-provider-oauth-server-api</artifactId>
   
   <dependencies>
-   	    <dependency>
-           <groupId>alps.platform.common</groupId>
-           <artifactId>alps-platform-common</artifactId>
-           <version>${alps.paltform.version}</version>
-        </dependency>
+
         <dependency>
   		   <groupId>alps.oauth.common</groupId>
            <artifactId>alps-oauth-common</artifactId>
            <version>${alps.paltform.version}</version>
   	    </dependency>
+  	    
   </dependencies>
 </project>

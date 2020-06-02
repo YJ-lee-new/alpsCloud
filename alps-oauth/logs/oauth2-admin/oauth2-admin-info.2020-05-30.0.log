@@ -1,0 +1,359 @@
+13:36:36.634 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9d1bdb9d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:36:38.169 [main] INFO  c.a.o.u.a.UaaAdminApplication - [logStartupProfileInfo,646] - No active profile set, falling back to default profiles: default
+13:36:55.036 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [multipleStoresDetected,244] - Multiple Spring Data modules found, entering strict repository configuration mode!
+13:36:55.101 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,126] - Bootstrapping Spring Data repositories in DEFAULT mode.
+13:36:55.543 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,182] - Finished Spring Data repository scanning in 167ms. Found 0 repository interfaces.
+13:37:00.936 [main] INFO  o.s.c.c.s.GenericScope - [setSerializationId,295] - BeanFactory id=5e9ebb9d-818b-3b2b-9814-557e407cdd72
+13:37:01.284 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerErrorChannel,193] - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+13:37:01.428 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerTaskScheduler,280] - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+13:37:01.647 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerHeaderChannelRegistry,431] - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+13:37:08.817 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8101d8a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:37:09.918 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:37:10.503 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$ebf393cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:37:10.741 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$c7859eef] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:37:10.936 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$6d47bc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:37:11.163 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:37:11.925 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9d1bdb9d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:37:17.769 [main] INFO  o.s.b.w.e.t.TomcatWebServer - [initialize,90] - Tomcat initialized with port(s): 8500 (http)
+13:37:18.043 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8500"]
+13:37:18.172 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+13:37:18.176 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.21]
+13:37:19.849 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+13:37:19.853 [main] INFO  o.s.w.c.ContextLoader - [prepareWebApplicationContext,283] - Root WebApplicationContext: initialization completed in 41530 ms
+13:37:20.729 [main] INFO  c.n.c.s.URLConfigurationSource - [<init>,122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+13:37:20.923 [main] INFO  c.n.c.DynamicPropertyFactory - [getInstance,281] - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6719f206
+13:37:33.905 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+13:37:36.456 [main] INFO  c.a.d.p.DruidDataSource - [init,991] - {dataSource-1} inited
+13:37:39.596 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - [initialize,171] - Initializing ExecutorService 'taskScheduler'
+13:37:44.959 [main] INFO  c.a.c.o.a.FeignAutoConfiguration - [feignFormEncoder,30] - FeignSpringFormEncoder [com.alps.common.oauth2.autoconfig.FeignSpringFormEncoder@1cecd0a9]
+13:37:45.043 [main] INFO  c.a.c.o.a.FeignAutoConfiguration - [feignRequestInterceptor,38] - FeignRequestInterceptor [com.alps.common.oauth2.feign.FeignRequestInterceptor@444720b7]
+13:37:47.907 [main] INFO  c.n.c.s.URLConfigurationSource - [<init>,122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+13:37:49.736 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - [initialize,171] - Initializing ExecutorService 'applicationTaskExecutor'
+13:37:50.985 [main] INFO  c.a.c.o.a.AutoConfiguration - [paginationInterceptor,48] - PaginationInterceptor [AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)]
+13:37:51.075 [main] INFO  c.a.c.o.a.AutoConfiguration - [springContextHolder,75] - SpringContextHolder [com.alps.common.oauth2.utils.SpringContextHolder@58dd584a]
+13:37:51.105 [main] INFO  c.a.c.o.a.AutoConfiguration - [exceptionHandler,88] - AlpsGlobalExceptionHandler [com.alps.common.oauth2.exception.AlpsGlobalExceptionHandler@40a360e6]
+13:37:51.155 [main] INFO  c.a.c.o.a.AutoConfiguration - [snowflakeIdWorker,102] - SnowflakeIdGenerator [com.alps.common.oauth2.constants.SnowflakeIdGenerator@5ed6a36a]
+13:37:51.188 [main] INFO  c.a.c.o.a.AutoConfiguration - [resourceAnnotationScan,116] - RequestMappingScan [com.alps.common.oauth2.constants.RequestMappingScan@7a7698f4]
+13:37:51.513 [main] INFO  c.a.c.o.a.AutoConfiguration - [alpsRestTemplate,132] - AlpsRestTemplate [com.alps.common.oauth2.constants.AlpsRestTemplate@63bdf82d]
+13:37:51.591 [main] INFO  c.a.c.o.a.AutoConfiguration - [restTemplate,141] - RestTemplate [org.springframework.web.client.RestTemplate@3dc70aa0]
+13:37:51.685 [main] INFO  c.a.c.o.a.MqAutoConfiguration - [apiResourceQueue,26] - Query cloud.scan.api.resource [Queue [name=cloud.scan.api.resource, durable=true, autoDelete=false, exclusive=false, arguments={}, actualName=cloud.scan.api.resource]]
+13:37:51.722 [main] INFO  c.a.c.o.a.MqAutoConfiguration - [accessLogsQueue,33] - Query cloud.access.logs [Queue [name=cloud.access.logs, durable=true, autoDelete=false, exclusive=false, arguments={}, actualName=cloud.access.logs]]
+13:37:58.005 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/error'], []
+13:37:58.011 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/login2'], []
+13:37:58.017 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/static/**'], []
+13:37:58.019 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/v2/api-docs/**'], []
+13:37:58.020 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/swagger-resources/**'], []
+13:37:58.026 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/webjars/**'], []
+13:37:58.028 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/favicon.png/'], []
+13:37:58.032 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/favicon.ico'], []
+13:37:58.309 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c739a9b, org.springframework.security.web.context.SecurityContextPersistenceFilter@749ebc39, org.springframework.security.web.header.HeaderWriterFilter@344db28d, org.springframework.security.web.authentication.logout.LogoutFilter@19fdcaba, org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter@6298dafb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64236be, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f9af742, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@980ac1f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@299022a9, org.springframework.security.web.session.SessionManagementFilter@5a98983b, org.springframework.security.web.access.ExceptionTranslationFilter@297c0311, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1dade178]
+13:37:58.370 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@44bbf5e3, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@613bebb9, org.springframework.security.web.context.SecurityContextPersistenceFilter@6b0bcea5, org.springframework.security.web.header.HeaderWriterFilter@3c82bcbd, org.springframework.web.filter.CharacterEncodingFilter@463e0b6a, org.springframework.security.web.authentication.logout.LogoutFilter@5e60e639, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@3b6b9981, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3aee72d8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5748638c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e864a8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2625eb84, org.springframework.security.web.session.SessionManagementFilter@776ae580, org.springframework.security.web.access.ExceptionTranslationFilter@23c3f787, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a564a61]
+13:37:58.392 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@284e68ae, org.springframework.security.web.context.SecurityContextPersistenceFilter@70290678, org.springframework.security.web.header.HeaderWriterFilter@4390b78f, org.springframework.security.web.csrf.CsrfFilter@57f8a3cf, org.springframework.security.web.authentication.logout.LogoutFilter@3b5d0c4d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5ebd3708, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3ce74930, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@456c6754, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7441eed3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c99419f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a73b74c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72de1d86, org.springframework.security.web.session.SessionManagementFilter@230ea983, org.springframework.security.web.access.ExceptionTranslationFilter@4c821dc7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7ae2f5b6]
+13:37:58.406 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fd1deed, org.springframework.security.web.context.SecurityContextPersistenceFilter@76aab1e3, org.springframework.security.web.header.HeaderWriterFilter@2a64cb1f, org.springframework.security.web.csrf.CsrfFilter@2810d9, org.springframework.security.web.authentication.logout.LogoutFilter@70f5f6c7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@375dc95c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@537360e3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@814b60b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@33ef701e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f9e32f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@432e242d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@515a897c, org.springframework.security.web.session.SessionManagementFilter@3644d12a, org.springframework.security.web.access.ExceptionTranslationFilter@408f3054, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b5f91a5]
+13:38:01.018 [main] INFO  o.s.b.a.e.w.EndpointLinksResolver - [<init>,58] - Exposing 24 endpoint(s) beneath base path '/actuator'
+13:38:04.364 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBusInput' has 1 subscriber(s).
+13:38:05.316 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBusInput
+13:38:05.992 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel errorChannel
+13:38:06.272 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBusOutput
+13:38:06.291 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel nullChannel
+13:38:06.395 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerHandler,785] - Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6e211727
+13:38:06.883 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerHandler,785] - Registering MessageHandler errorLogger
+13:38:07.026 [main] INFO  o.s.i.e.EventDrivenConsumer - [logComponentSubscriptionEvent,107] - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+13:38:07.031 [main] INFO  o.s.i.c.PublishSubscribeChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.errorChannel' has 1 subscriber(s).
+13:38:07.033 [main] INFO  o.s.i.e.EventDrivenConsumer - [start,159] - started _org.springframework.integration.errorLogger
+13:38:09.476 [main] INFO  o.s.a.r.c.CachingConnectionFactory - [createBareConnection,460] - Attempting to connect to: [localhost:5672]
+13:38:11.452 [main] INFO  o.s.a.r.c.CachingConnectionFactory - [createBareConnection,496] - Created new connection: rabbitConnectionFactory#7ee9920a:0/SimpleConnection@21845b36 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 2565]
+13:38:11.880 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBusOutput' has 1 subscriber(s).
+13:38:11.957 [main] INFO  o.s.c.n.e.InstanceInfoFactory - [create,72] - Setting initial instance status as: STARTING
+13:38:12.256 [main] INFO  c.n.d.DiscoveryClient - [<init>,365] - Initializing Eureka in region us-east-1
+13:38:12.966 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,70] - Using JSON encoding codec LegacyJacksonJson
+13:38:12.970 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,71] - Using JSON decoding codec LegacyJacksonJson
+13:38:13.730 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,80] - Using XML encoding codec XStreamXml
+13:38:13.734 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,81] - Using XML decoding codec XStreamXml
+13:38:15.113 [main] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+13:38:15.434 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,976] - Disable delta property : false
+13:38:15.436 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,977] - Single vip registry refresh property : null
+13:38:15.441 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,978] - Force full registry fetch : false
+13:38:15.443 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,979] - Application is null : false
+13:38:15.451 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,980] - Registered Applications size is zero : true
+13:38:15.452 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,982] - Application version is -1: true
+13:38:15.456 [main] INFO  c.n.d.DiscoveryClient - [getAndStoreFullRegistry,1065] - Getting all instance registry info from the eureka server
+13:38:16.672 [main] INFO  c.n.d.DiscoveryClient - [getAndStoreFullRegistry,1074] - The response status is 200
+13:38:16.690 [main] INFO  c.n.d.DiscoveryClient - [initScheduledTasks,1288] - Starting heartbeat executor: renew interval is: 30
+13:38:16.705 [main] INFO  c.n.d.InstanceInfoReplicator - [<init>,60] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+13:38:16.772 [main] INFO  c.n.d.DiscoveryClient - [<init>,465] - Discovery Client initialized at timestamp 1590817096727 with initial instances count: 1
+13:38:16.790 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [register,41] - Registering application OAUTH2-ADMIN with eureka with status UP
+13:38:16.796 [main] INFO  c.n.d.DiscoveryClient - [notify,1323] - Saw local status change event StatusChangeEvent [timestamp=1590817096796, current=UP, previous=STARTING]
+13:38:16.817 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - [register,844] - DiscoveryClient_OAUTH2-ADMIN/oauth2-admin: registering service...
+13:38:16.934 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner - [doProvisionConsumerDestination,168] - declaring queue for inbound: springCloudBus.anonymous.37mcvTboSi-Uf_QOd1cOBQ, bound to: springCloudBus
+13:38:16.969 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - [register,853] - DiscoveryClient_OAUTH2-ADMIN/oauth2-admin - registration status: 204
+13:38:17.297 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBus.anonymous.37mcvTboSi-Uf_QOd1cOBQ.errors
+13:38:18.203 [main] INFO  o.s.c.s.b.BinderErrorChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBus.anonymous.37mcvTboSi-Uf_QOd1cOBQ.errors' has 1 subscriber(s).
+13:38:18.219 [main] INFO  o.s.c.s.b.BinderErrorChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBus.anonymous.37mcvTboSi-Uf_QOd1cOBQ.errors' has 2 subscriber(s).
+13:38:18.563 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter - [start,159] - started inbound.springCloudBus.anonymous.37mcvTboSi-Uf_QOd1cOBQ
+13:38:18.756 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8500"]
+13:38:19.489 [main] INFO  o.s.b.w.e.t.TomcatWebServer - [start,202] - Tomcat started on port(s): 8500 (http) with context path ''
+13:38:19.495 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - [onApplicationEvent,145] - Updating port to 8500
+13:38:19.501 [main] INFO  c.a.o.u.a.UaaAdminApplication - [logStarted,59] - Started UaaAdminApplication in 118.255 seconds (JVM running for 128.879)
+13:43:16.808 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+13:47:51.115 [http-nio-8500-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:47:51.120 [http-nio-8500-exec-1] INFO  o.s.w.s.DispatcherServlet - [initServletBean,524] - Initializing Servlet 'dispatcherServlet'
+13:47:51.190 [http-nio-8500-exec-1] INFO  o.s.w.s.DispatcherServlet - [initServletBean,546] - Completed initialization in 63 ms
+13:48:17.591 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+13:53:18.173 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+13:54:29.822 [http-nio-8500-exec-5] INFO  c.n.c.ChainedDynamicProperty - [checkAndFlip,115] - Flipping property: oauth2-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+13:54:30.132 [http-nio-8500-exec-5] INFO  c.n.u.c.ShutdownEnabledTimer - [<init>,58] - Shutdown hook installed for: NFLoadBalancer-PingTimer-oauth2-server
+13:54:30.142 [http-nio-8500-exec-5] INFO  c.n.l.BaseLoadBalancer - [initWithConfig,197] - Client: oauth2-server instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=oauth2-server,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+13:54:30.251 [http-nio-8500-exec-5] INFO  c.n.l.DynamicServerListLoadBalancer - [enableAndInitLearnNewServersFeature,222] - Using serverListUpdater PollingServerListUpdater
+13:54:30.729 [http-nio-8500-exec-5] INFO  c.n.c.ChainedDynamicProperty - [checkAndFlip,115] - Flipping property: oauth2-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+13:54:30.748 [http-nio-8500-exec-5] INFO  c.n.l.DynamicServerListLoadBalancer - [restOfInit,150] - DynamicServerListLoadBalancer for client oauth2-server initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=oauth2-server,current list of Servers=[vWHPC80DMZ0016.ECMMS.FOXCONN:8700],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:vWHPC80DMZ0016.ECMMS.FOXCONN:8700;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@4a630d7e
+13:54:31.289 [PollingServerListUpdater-0] INFO  c.n.c.ChainedDynamicProperty - [checkAndFlip,115] - Flipping property: oauth2-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+13:58:18.743 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:03:19.250 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:08:19.706 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:13:20.791 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:18:23.712 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:23:25.143 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:28:26.053 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:33:26.763 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:38:27.422 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:43:28.053 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:48:28.659 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+14:53:29.264 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:00:51.111 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8f800415] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:00:51.883 [main] INFO  c.a.o.u.a.UaaAdminApplication - [logStartupProfileInfo,646] - No active profile set, falling back to default profiles: default
+15:01:04.516 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [multipleStoresDetected,244] - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:01:04.576 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,126] - Bootstrapping Spring Data repositories in DEFAULT mode.
+15:01:04.967 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [registerRepositoriesIn,182] - Finished Spring Data repository scanning in 148ms. Found 0 repository interfaces.
+15:01:09.502 [main] INFO  o.s.c.c.s.GenericScope - [setSerializationId,295] - BeanFactory id=5e9ebb9d-818b-3b2b-9814-557e407cdd72
+15:01:09.846 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerErrorChannel,193] - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+15:01:09.996 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerTaskScheduler,280] - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+15:01:10.188 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - [registerHeaderChannelRegistry,431] - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+15:01:14.426 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$73660118] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:01:15.231 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:01:15.740 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$de57bc47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:01:15.899 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration$$EnhancerBySpringCGLIB$$b9e9c767] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:01:15.984 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$f2d17034] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:01:16.068 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:01:16.389 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - [postProcessAfterInitialization,330] - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8f800415] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:01:20.855 [main] INFO  o.s.b.w.e.t.TomcatWebServer - [initialize,90] - Tomcat initialized with port(s): 8500 (http)
+15:01:21.006 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Initializing ProtocolHandler ["http-nio-8500"]
+15:01:21.057 [main] INFO  o.a.c.c.StandardService - [log,173] - Starting service [Tomcat]
+15:01:21.059 [main] INFO  o.a.c.c.StandardEngine - [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.21]
+15:01:22.195 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring embedded WebApplicationContext
+15:01:22.199 [main] INFO  o.s.w.c.ContextLoader - [prepareWebApplicationContext,283] - Root WebApplicationContext: initialization completed in 30239 ms
+15:01:22.995 [main] INFO  c.n.c.s.URLConfigurationSource - [<init>,122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+15:01:23.121 [main] INFO  c.n.c.DynamicPropertyFactory - [getInstance,281] - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@5065bdac
+15:01:34.969 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - [dataSource,56] - Init DruidDataSource
+15:01:37.580 [main] INFO  c.a.d.p.DruidDataSource - [init,991] - {dataSource-1} inited
+15:01:41.100 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - [initialize,171] - Initializing ExecutorService 'taskScheduler'
+15:01:47.077 [main] INFO  c.a.c.o.a.FeignAutoConfiguration - [feignFormEncoder,30] - FeignSpringFormEncoder [com.alps.common.oauth2.autoconfig.FeignSpringFormEncoder@2e268c19]
+15:01:47.170 [main] INFO  c.a.c.o.a.FeignAutoConfiguration - [feignRequestInterceptor,38] - FeignRequestInterceptor [com.alps.common.oauth2.feign.FeignRequestInterceptor@58df431e]
+15:01:50.145 [main] INFO  c.n.c.s.URLConfigurationSource - [<init>,122] - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+15:01:52.171 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - [initialize,171] - Initializing ExecutorService 'applicationTaskExecutor'
+15:01:53.399 [main] INFO  c.a.c.o.a.AutoConfiguration - [paginationInterceptor,48] - PaginationInterceptor [AbstractSqlParserHandler(sqlParserList=null, sqlParserFilter=null)]
+15:01:53.529 [main] INFO  c.a.c.o.a.AutoConfiguration - [springContextHolder,75] - SpringContextHolder [com.alps.common.oauth2.utils.SpringContextHolder@12581426]
+15:01:53.568 [main] INFO  c.a.c.o.a.AutoConfiguration - [exceptionHandler,88] - AlpsGlobalExceptionHandler [com.alps.common.oauth2.exception.AlpsGlobalExceptionHandler@3c84c32f]
+15:01:53.641 [main] INFO  c.a.c.o.a.AutoConfiguration - [snowflakeIdWorker,102] - SnowflakeIdGenerator [com.alps.common.oauth2.constants.SnowflakeIdGenerator@36c8e1c6]
+15:01:53.682 [main] INFO  c.a.c.o.a.AutoConfiguration - [resourceAnnotationScan,116] - RequestMappingScan [com.alps.common.oauth2.constants.RequestMappingScan@cf315f1]
+15:01:54.036 [main] INFO  c.a.c.o.a.AutoConfiguration - [alpsRestTemplate,132] - AlpsRestTemplate [com.alps.common.oauth2.constants.AlpsRestTemplate@7a80b2e6]
+15:01:54.121 [main] INFO  c.a.c.o.a.AutoConfiguration - [restTemplate,141] - RestTemplate [org.springframework.web.client.RestTemplate@4b90f49d]
+15:01:54.228 [main] INFO  c.a.c.o.a.MqAutoConfiguration - [apiResourceQueue,26] - Query cloud.scan.api.resource [Queue [name=cloud.scan.api.resource, durable=true, autoDelete=false, exclusive=false, arguments={}, actualName=cloud.scan.api.resource]]
+15:01:54.268 [main] INFO  c.a.c.o.a.MqAutoConfiguration - [accessLogsQueue,33] - Query cloud.access.logs [Queue [name=cloud.access.logs, durable=true, autoDelete=false, exclusive=false, arguments={}, actualName=cloud.access.logs]]
+15:02:00.738 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/error'], []
+15:02:00.742 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/login2'], []
+15:02:00.744 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/static/**'], []
+15:02:00.745 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/v2/api-docs/**'], []
+15:02:00.746 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/swagger-resources/**'], []
+15:02:00.750 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/webjars/**'], []
+15:02:00.750 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/favicon.png/'], []
+15:02:00.752 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: Ant [pattern='/favicon.ico'], []
+15:02:01.032 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@397f3ff5, org.springframework.security.web.context.SecurityContextPersistenceFilter@7aafac17, org.springframework.security.web.header.HeaderWriterFilter@424c8ebe, org.springframework.security.web.authentication.logout.LogoutFilter@5f83b506, org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter@1b9075c9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3b0b20a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53251e03, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@81a193b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f3d33bc, org.springframework.security.web.session.SessionManagementFilter@1263d20d, org.springframework.security.web.access.ExceptionTranslationFilter@276511ca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@581661d6]
+15:02:01.099 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@11f8d64, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10f03ab0, org.springframework.security.web.context.SecurityContextPersistenceFilter@6efa2e06, org.springframework.security.web.header.HeaderWriterFilter@2531049f, org.springframework.web.filter.CharacterEncodingFilter@62a193e0, org.springframework.security.web.authentication.logout.LogoutFilter@5c934077, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@6a7a8e1e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@453c10c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6722f81a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a9a0d9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@489ec791, org.springframework.security.web.session.SessionManagementFilter@14404be2, org.springframework.security.web.access.ExceptionTranslationFilter@1743c249, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c4f6d5b]
+15:02:01.123 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42ae0fcf, org.springframework.security.web.context.SecurityContextPersistenceFilter@47620803, org.springframework.security.web.header.HeaderWriterFilter@1c93f349, org.springframework.security.web.csrf.CsrfFilter@414a3c7d, org.springframework.security.web.authentication.logout.LogoutFilter@f9b97dc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@751f445a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@708ddfd3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5e16e521, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3f46fb53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43aa9ccd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40a0364a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51a4472d, org.springframework.security.web.session.SessionManagementFilter@473ee461, org.springframework.security.web.access.ExceptionTranslationFilter@7e4f5062, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d3aefd]
+15:02:01.136 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - [<init>,43] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62a07c01, org.springframework.security.web.context.SecurityContextPersistenceFilter@25b7ccfc, org.springframework.security.web.header.HeaderWriterFilter@26350832, org.springframework.security.web.csrf.CsrfFilter@40830e1e, org.springframework.security.web.authentication.logout.LogoutFilter@582ea857, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@57cc7d9e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@43e55cfb, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@52dbd3d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@23c07745, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56ed6e17, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58179860, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31b9108b, org.springframework.security.web.session.SessionManagementFilter@7d1cdebf, org.springframework.security.web.access.ExceptionTranslationFilter@4f578fc2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@45144fdf]
+15:02:03.781 [main] INFO  o.s.b.a.e.w.EndpointLinksResolver - [<init>,58] - Exposing 24 endpoint(s) beneath base path '/actuator'
+15:02:07.459 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBusInput' has 1 subscriber(s).
+15:02:08.554 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBusInput
+15:02:09.107 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel nullChannel
+15:02:09.191 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel errorChannel
+15:02:09.414 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBusOutput
+15:02:09.463 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerHandler,785] - Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@376a34fb
+15:02:09.944 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerHandler,785] - Registering MessageHandler errorLogger
+15:02:10.136 [main] INFO  o.s.i.e.EventDrivenConsumer - [logComponentSubscriptionEvent,107] - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+15:02:10.143 [main] INFO  o.s.i.c.PublishSubscribeChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.errorChannel' has 1 subscriber(s).
+15:02:10.145 [main] INFO  o.s.i.e.EventDrivenConsumer - [start,159] - started _org.springframework.integration.errorLogger
+15:02:13.108 [main] INFO  o.s.a.r.c.CachingConnectionFactory - [createBareConnection,460] - Attempting to connect to: [localhost:5672]
+15:02:15.025 [main] INFO  o.s.a.r.c.CachingConnectionFactory - [createBareConnection,496] - Created new connection: rabbitConnectionFactory#4cd9ee2c:0/SimpleConnection@392a091 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 10970]
+15:02:15.572 [main] INFO  o.s.c.s.m.DirectWithAttributesChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBusOutput' has 1 subscriber(s).
+15:02:15.652 [main] INFO  o.s.c.n.e.InstanceInfoFactory - [create,72] - Setting initial instance status as: STARTING
+15:02:15.981 [main] INFO  c.n.d.DiscoveryClient - [<init>,365] - Initializing Eureka in region us-east-1
+15:02:16.845 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,70] - Using JSON encoding codec LegacyJacksonJson
+15:02:16.850 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,71] - Using JSON decoding codec LegacyJacksonJson
+15:02:17.757 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,80] - Using XML encoding codec XStreamXml
+15:02:17.764 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - [<init>,81] - Using XML decoding codec XStreamXml
+15:02:18.938 [main] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:02:19.185 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,976] - Disable delta property : false
+15:02:19.187 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,977] - Single vip registry refresh property : null
+15:02:19.191 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,978] - Force full registry fetch : false
+15:02:19.192 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,979] - Application is null : false
+15:02:19.196 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,980] - Registered Applications size is zero : true
+15:02:19.198 [main] INFO  c.n.d.DiscoveryClient - [fetchRegistry,982] - Application version is -1: true
+15:02:19.203 [main] INFO  c.n.d.DiscoveryClient - [getAndStoreFullRegistry,1065] - Getting all instance registry info from the eureka server
+15:02:20.313 [main] INFO  c.n.d.DiscoveryClient - [getAndStoreFullRegistry,1074] - The response status is 200
+15:02:20.328 [main] INFO  c.n.d.DiscoveryClient - [initScheduledTasks,1288] - Starting heartbeat executor: renew interval is: 30
+15:02:20.343 [main] INFO  c.n.d.InstanceInfoReplicator - [<init>,60] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+15:02:20.370 [main] INFO  c.n.d.DiscoveryClient - [<init>,465] - Discovery Client initialized at timestamp 1590822140363 with initial instances count: 2
+15:02:20.387 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [register,41] - Registering application OAUTH2-ADMIN with eureka with status UP
+15:02:20.390 [main] INFO  c.n.d.DiscoveryClient - [notify,1323] - Saw local status change event StatusChangeEvent [timestamp=1590822140390, current=UP, previous=STARTING]
+15:02:20.405 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - [register,844] - DiscoveryClient_OAUTH2-ADMIN/oauth2-admin: registering service...
+15:02:20.556 [main] INFO  o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner - [doProvisionConsumerDestination,168] - declaring queue for inbound: springCloudBus.anonymous.Cuax6zmlQpuK3fvoxKIcig, bound to: springCloudBus
+15:02:20.591 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.n.d.DiscoveryClient - [register,853] - DiscoveryClient_OAUTH2-ADMIN/oauth2-admin - registration status: 204
+15:02:20.855 [main] INFO  o.s.i.m.IntegrationMBeanExporter - [registerChannel,767] - Registering MessageChannel springCloudBus.anonymous.Cuax6zmlQpuK3fvoxKIcig.errors
+15:02:21.656 [main] INFO  o.s.c.s.b.BinderErrorChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBus.anonymous.Cuax6zmlQpuK3fvoxKIcig.errors' has 1 subscriber(s).
+15:02:21.673 [main] INFO  o.s.c.s.b.BinderErrorChannel - [adjustCounterIfNecessary,64] - Channel 'oauth2-admin-1.springCloudBus.anonymous.Cuax6zmlQpuK3fvoxKIcig.errors' has 2 subscriber(s).
+15:02:21.975 [main] INFO  o.s.i.a.i.AmqpInboundChannelAdapter - [start,159] - started inbound.springCloudBus.anonymous.Cuax6zmlQpuK3fvoxKIcig
+15:02:22.133 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] - Starting ProtocolHandler ["http-nio-8500"]
+15:02:22.422 [main] INFO  o.s.b.w.e.t.TomcatWebServer - [start,202] - Tomcat started on port(s): 8500 (http) with context path ''
+15:02:22.427 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - [onApplicationEvent,145] - Updating port to 8500
+15:02:22.434 [main] INFO  c.a.o.u.a.UaaAdminApplication - [logStarted,59] - Started UaaAdminApplication in 101.577 seconds (JVM running for 105.822)
+15:02:31.240 [http-nio-8500-exec-3] INFO  o.a.c.c.C.[.[.[/] - [log,173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:02:31.245 [http-nio-8500-exec-3] INFO  o.s.w.s.DispatcherServlet - [initServletBean,524] - Initializing Servlet 'dispatcherServlet'
+15:02:31.302 [http-nio-8500-exec-3] INFO  o.s.w.s.DispatcherServlet - [initServletBean,546] - Completed initialization in 54 ms
+15:02:41.442 [http-nio-8500-exec-3] INFO  c.n.c.ChainedDynamicProperty - [checkAndFlip,115] - Flipping property: oauth2-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+15:02:41.541 [http-nio-8500-exec-3] INFO  c.n.u.c.ShutdownEnabledTimer - [<init>,58] - Shutdown hook installed for: NFLoadBalancer-PingTimer-oauth2-server
+15:02:41.544 [http-nio-8500-exec-3] INFO  c.n.l.BaseLoadBalancer - [initWithConfig,197] - Client: oauth2-server instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=oauth2-server,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+15:02:41.609 [http-nio-8500-exec-3] INFO  c.n.l.DynamicServerListLoadBalancer - [enableAndInitLearnNewServersFeature,222] - Using serverListUpdater PollingServerListUpdater
+15:02:41.887 [http-nio-8500-exec-3] INFO  c.n.c.ChainedDynamicProperty - [checkAndFlip,115] - Flipping property: oauth2-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+15:02:41.904 [http-nio-8500-exec-3] INFO  c.n.l.DynamicServerListLoadBalancer - [restOfInit,150] - DynamicServerListLoadBalancer for client oauth2-server initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=oauth2-server,current list of Servers=[vWHPC80DMZ0016.ECMMS.FOXCONN:8700],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:vWHPC80DMZ0016.ECMMS.FOXCONN:8700;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@10497310
+15:02:42.625 [PollingServerListUpdater-0] INFO  c.n.c.ChainedDynamicProperty - [checkAndFlip,115] - Flipping property: oauth2-server.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+15:07:19.812 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:12:20.417 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:17:21.022 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:22:22.493 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:27:25.172 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:32:26.577 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:37:27.534 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:42:28.320 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:47:29.035 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:52:29.735 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+15:57:30.432 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:01:53.682 [http-nio-8500-exec-1] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 NONE_PROVIDED 不存在!
+16:01:53.682 [http-nio-8500-exec-2] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 NONE_PROVIDED 不存在!
+16:02:31.130 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:07:31.824 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:09:08.747 [http-nio-8500-exec-5] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 NONE_PROVIDED 不存在!
+16:10:03.996 [http-nio-8500-exec-8] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:10:55.735 [http-nio-8500-exec-9] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:12:32.518 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:12:38.823 [http-nio-8500-exec-4] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:14:23.375 [http-nio-8500-exec-2] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:15:02.606 [http-nio-8500-exec-6] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:16:46.572 [http-nio-8500-exec-8] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:17:33.212 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:19:28.183 [http-nio-8500-exec-9] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:22:33.907 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:27:34.603 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:32:36.929 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:37:39.221 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:42:40.530 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:47:41.483 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:52:42.321 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+16:57:29.798 [http-nio-8500-exec-4] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+16:57:43.118 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:02:43.886 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:07:44.642 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:12:45.395 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:17:32.399 [http-nio-8500-exec-2] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:17:46.148 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:19:17.792 [http-nio-8500-exec-6] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:21:10.138 [http-nio-8500-exec-8] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:22:11.760 [http-nio-8500-exec-9] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:22:43.970 [http-nio-8500-exec-4] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:22:46.903 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:23:49.587 [http-nio-8500-exec-2] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:25:27.818 [http-nio-8500-exec-6] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:26:52.608 [http-nio-8500-exec-8] INFO  c.a.o.u.a.s.UserDetailsServiceImpl - [loadUserByUsername,36] - 系统用户 admin 不存在!
+17:27:47.658 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:32:48.411 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:37:49.102 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:42:46.630 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:47:46.169 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:52:46.419 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+17:57:46.934 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:02:47.537 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:07:48.171 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:12:48.836 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:17:49.500 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:22:50.164 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:27:50.831 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:32:51.495 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:37:52.160 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:42:52.825 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:47:53.489 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:52:54.153 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+18:57:54.816 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:02:55.481 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:07:56.145 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:12:56.809 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:17:57.474 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:22:55.773 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:27:51.381 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:32:50.227 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:37:50.247 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:42:49.409 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:47:49.281 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:52:49.579 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+19:57:49.504 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:02:49.193 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:07:49.344 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:12:49.599 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:17:49.213 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:22:49.260 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:27:49.479 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:32:49.386 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:37:49.344 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:42:49.491 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:47:49.602 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:52:49.439 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+20:57:49.526 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:02:49.688 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:07:49.595 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:12:49.631 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:17:49.750 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:22:49.900 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:27:50.078 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:32:50.280 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:37:50.462 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:42:50.325 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:47:50.392 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:52:50.520 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+21:57:50.674 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:02:50.836 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:07:50.991 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:12:51.063 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:17:50.853 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:22:50.876 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:27:50.979 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:32:51.109 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:37:51.249 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:42:51.380 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:47:51.563 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:52:51.840 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+22:57:52.042 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:02:52.196 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:07:52.353 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:12:52.506 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:17:52.666 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:22:53.182 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:27:53.779 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:32:54.121 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:37:54.366 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:42:54.572 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:47:54.755 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:52:54.944 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration
+23:57:54.933 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.a.ConfigClusterResolver - [getClusterEndpoints,43] - Resolving eureka endpoints via configuration

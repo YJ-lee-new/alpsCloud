@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alps.oauth.uaa.client.web.mapper.SysRoleUserMapper">
+    <resultMap id="BaseResultMap" type="com.alps.base.api.model.entity.SysRoleUser">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="role_id" property="roleId" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <select id="selectRoleUserList" parameterType="Long"  resultMap="com.alps.oauth.uaa.client.web.mapper.SysRoleMapper.BaseResultMap">
+        SELECT
+        sys_user_role.user_id,
+        sys_role.role_id,
+        sys_role.role_code,
+        sys_role.role_name,
+        sys_role.role_desc,
+        sys_role.status,
+        sys_role.create_time,
+        sys_role.update_time
+        FROM
+        sys_user_role
+        INNER JOIN sys_role ON sys_user_role.role_id = sys_role.role_id
+        WHERE user_id = #{userId}
+    </select>
+
+
+    <select id="selectRoleUserIdList" parameterType="Long"  resultType="java.lang.Long">
+        SELECT
+        sys_role.role_id
+        FROM
+        sys_user_role
+        INNER JOIN sys_role ON sys_user_role.role_id = sys_role.role_id
+        WHERE user_id = #{userId}  and status = 1
+    </select>
+    
+    <insert id="batchUserRole">
+		insert into sys_user_role(user_id, role_id) values
+		<foreach item="item" index="index" collection="list" separator=",">
+			(#{item.userId},#{item.roleId})
+		</foreach>
+	</insert>
+	
+	<delete id="deleteUserRoleInfo" parameterType="SysRoleUser">
+		delete from sys_user_role where user_id=#{userId} and role_id=#{roleId}
+	</delete>
+	
+	<delete id="deleteUserRoleInfos">
+	    delete from sys_user_role where role_id=#{roleId} and user_id in
+ 	    <foreach collection="userIds" item="userId" open="(" separator="," close=")">
+ 	        #{userId}
+            </foreach> 
+	</delete>
+    
+</mapper>

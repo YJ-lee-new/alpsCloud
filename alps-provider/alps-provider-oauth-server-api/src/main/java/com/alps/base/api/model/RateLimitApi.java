@@ -2,13 +2,13 @@ package com.alps.base.api.model;
 
 import java.io.Serializable;
 
-import com.alps.base.api.model.entity.BaseApi;
+import com.alps.base.api.model.entity.SysApi;
 /**
  * @author:Yujie.lee
  * Date:2019年12月7日
  * TodoTODO
  */
-public class RateLimitApi extends BaseApi implements Serializable {
+public class RateLimitApi extends SysApi implements Serializable {
     private static final long serialVersionUID = 1212925216631391016L;
     private Long itemId;
     private Long policyId;

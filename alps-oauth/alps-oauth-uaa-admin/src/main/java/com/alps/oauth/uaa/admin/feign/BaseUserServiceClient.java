@@ -3,7 +3,7 @@ package com.alps.oauth.uaa.admin.feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 
-import com.alps.base.api.service.IBaseUserServiceClient;
+import com.alps.base.api.service.ISysUserServiceClient;
 import com.alps.common.constant.BaseConstants;
 /**
  * @author:Yujie.lee
@@ -13,5 +13,5 @@ import com.alps.common.constant.BaseConstants;
 @Component
 @FeignClient(value = BaseConstants.OAUTH2_SERVER)
 //@FeignClient(value = BaseConstants.SYSTEM_PRO)
-public interface BaseUserServiceClient extends IBaseUserServiceClient {
+public interface BaseUserServiceClient extends ISysUserServiceClient {
 }

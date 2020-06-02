@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<th:block th:include="include :: header('修改接口')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-pfApi-edit" th:object="${SysApi}">
+            <input id="apiId" name="apiId" th:field="*{apiId}"  type="hidden">
+            
+            <div class="form-group">	
+				<label class="col-sm-3 control-label">app名称：</label>
+				<div class="col-sm-8">
+					 <select id="serviceId" name="serviceId" class="form-control select2-multiple" required="required" >
+								<option th:each="app:${appList}" th:value="${app.appId}" th:text="${app.appName}" th:selected="${app.appId == serviceId}"  ></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">接口Code：</label>
+				<div class="col-sm-8">
+					<input id="apiCode" name="apiCode" th:field="*{apiCode}" class="form-control" type="text"  required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">接口名称：</label>
+				<div class="col-sm-8">
+					<input id="apiName" name="apiName" th:field="*{apiName}" class="form-control" type="text" required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">对外提供服务的URL：</label>
+				<div class="col-sm-8">
+					<input id="path" name="path" th:field="*{path}" class="form-control" type="text"  required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">方法名：</label>
+				<div class="col-sm-8">
+					<input id="methodName" name="methodName" th:field="*{methodName}" class="form-control" type="text" required="required">
+				</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">接口类型：</label>
+				<div class="col-sm-8">
+					<label class="radio-box"> <input type="radio" name="apiCategory" value="HTTP"  th:checked="${SysApi.apiCategory == 'HTTP'}"/> HTTP </label> 
+					<label class="radio-box"> <input type="radio" name="apiCategory" value="API" th:checked="${SysApi.apiCategory == 'API'}"/> API</label> 
+					<label class="radio-box"> <input type="radio" name="apiCategory" value="RPC"  th:checked="${SysApi.apiCategory == 'RPC'}"/> RPC </label> 
+					<label class="radio-box"> <input type="radio" name="apiCategory" value="RESTful" th:checked="${SysApi.apiCategory == 'RESTful'}"/> RESTful</label> 
+					<label class="radio-box"> <input type="radio" name="apiCategory" value="Webservice" th:checked="${SysApi.apiCategory == 'Webservice'}"/> WebService</label> 
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">请求方式：</label>
+				<div class="col-sm-8">
+					<label class="radio-box"> <input type="radio" name="requestMethod" value="POST"  th:checked="${SysApi.requestMethod == 'POST'}"/>POST </label> 
+					<label class="radio-box"> <input type="radio" name="requestMethod" value="GET" th:checked="${SysApi.requestMethod == 'GET'}"/> GET</label> 
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">是否有效：</label>
+					<div class="col-sm-8">
+						<label class="radio-box"> <input type="radio" name="status" value="1"  th:checked="${SysApi.status == 1}"/> 有效 </label> 
+						<label class="radio-box"> <input type="radio" name="status" value="0"  th:checked="${SysApi.status == 0}"/> 无效</label> 
+					</div>
+			</div>
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">接口描述：</label>
+				<div class="col-sm-8">
+					<input id="apiDesc" name="apiDesc" th:field="*{apiDesc}" class="form-control" type="text">
+				</div>
+			</div>
+			
+		</form>
+    </div>
+    <div th:include="include::footer"></div>
+    <script type="text/javascript">
+		var prefix = ctx + "system/api";
+		$("#form-pfApi-edit").validate({
+				rules:{
+					xxxx:{
+						required:true,
+					},
+					apiCode:{
+	        			minlength: 2,
+	        			maxlength: 20,
+	        			remote: {
+	                        url: prefix + "/checkApiCodeUniqueUpdate",
+	                        type: "post",
+	                        dataType: "json",
+	                        data: {
+	                        	path : function() {
+	                                return $.common.trim($("#apiCode").val());
+	                            },
+	                            apiId : function() {
+	                                return $.common.trim($("#apiId").val());
+	                            }
+	                        },
+	                        dataFilter: function(data, type) {
+	                        	return $.validate.unique(data);
+	                        }
+	                    }
+	        		},
+	        		path:{
+	        			minlength: 5,
+	        			maxlength: 60,
+	        			remote: {
+	                        url: prefix + "/checkPathUniqueUpdate",
+	                        type: "post",
+	                        dataType: "json",
+	                        data: {
+	                        	path : function() {
+	                                return $.common.trim($("#path").val());
+	                            },
+	                            apiId : function() {
+	                                return $.common.trim($("#apiId").val());
+	                            }
+	                        },
+	                        dataFilter: function(data, type) {
+	                        	return $.validate.unique(data);
+	                        }
+	                    }
+	        		},
+				},
+				messages: {
+	                "apiCode": {
+	                    remote: "apiCode已存在！"
+	                },
+	                "path": {
+	                    remote: "该路径已经存在，请确保访问URL唯 一性！"
+	                }
+	            },
+				focusCleanup: true
+			});
+		function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-pfApi-edit').serialize());
+	        }
+	    }
+	</script>
+</body>
+</html>

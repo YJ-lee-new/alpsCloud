@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="alps-cloud平台后台管理">
+    <title>alps-cloud平台后台管理</title>
+     <link th:href="@{/css/alps/style_log.css}" rel="stylesheet"/>
+     <link th:href="@{/css/alps/style.css}" rel="stylesheet"/>
+     <link th:href="@{/css/alps/userpanel.css}" rel="stylesheet"/>
+   
+    <link th:href="@{/favicon.png}"  rel="shortcut icon"/>
+    <style type="text/css">label.error { position:inherit;  }</style>
+</head>
+
+<body class="login">
+<div class="login_m">
+<div class="login_boder">
+<form id="signupForm" action="/alps/login" method="POST">
+<div class="login_padding" id="login_model">
+ <div class ="logo_name">Advanced Live Production system</div>
+  <h2>请输入用户名:</h2>
+  <label>
+    <input type="text" id="username"  name="username"  class="txt_input txt_input2" onfocus="if (value ==&#39;Your name&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;Your name&#39;}" value="Your name">
+  </label>
+  <h2>请输入密码:</h2>
+  <label>
+    <input type="password" name="password" id="password" class="txt_input" onfocus="if (value ==&#39;******&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;******&#39;}" value="">
+  </label>
+ 
+  <div class="rem_sub">
+    <div id="forget_model"  style="margin: 1em 0em;" >
+          <input  name="domain" type="checkbox" value="@superAdmin.com"> 
+	      <label  >管理员登录</label>
+	</div>
+    <label>
+      <input type="submit" class="sub_button"  name="btnSubmit" id="btnSubmit"  data-loading="正在验证登录，请稍后..."  value="SIGN-IN" style="opacity: 0.7;"/>
+    </label>
+  </div>
+</div>
+</form>
+
+
+
+
+
+
+
+<!--login_padding  Sign up end-->
+</div><!--login_boder end-->
+
+<div style="color:rgba(255,255,255,0.6);line-height:12px;margin-top:15px;">
+<p align="center"> ALPs(Advanced Live Production system)</p>
+<p align="center" style="margin-top: 5px;">  &copy; 2019 All Rights ITSS-SOFT-SERVICE </p>
+</div>
+</div><!--login_m end-->
+
+<script th:inline="javascript"> var ctx = [[@{/}]]; var captchaType = [[${captchaType}]]; </script>
+<!-- 全局js -->
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/ajax/libs/validate/jquery.validate.min.js}"></script>
+<script th:src="@{/ajax/libs/validate/messages_zh.min.js}"></script>
+<script th:src="@{/ajax/libs/layer/layer.min.js}"></script>
+<script th:src="@{/ajax/libs/blockUI/jquery.blockUI.js}"></script>
+<script th:src="@{/alps/js/lps.js?v=3.3.0}"></script>
+<script th:src="@{/alps/login.js}"></script>
+</body></html>

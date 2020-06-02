@@ -77,15 +77,15 @@ public class AccessFilter implements GlobalFilter, Ordered {
 			Object params = stringRedisTemplate.opsForValue().get(UaaConstant.AUTH +":" + accessToken);
 			//check访问是否带Token
 			if (params != null) {
-				String rul = gateWayResource.getRouteId(uri);
+				String url = gateWayResource.getRouteId(uri);
 				//check该uri是否合法
-				if(rul != null) {
-					Object toekn2api =stringRedisTemplate.boundHashOps(UaaConstant.API_OKEN + ":" + accessToken).get(rul);
+				if(url != null) {
+					Object toekn2api =stringRedisTemplate.boundHashOps(UaaConstant.API_OKEN + ":" + accessToken).get(url);
 					//check该token是否是有该API的访问权限. 
 					if(toekn2api != null) {
 						return chain.filter(exchange);
 					}else {
-						return	MonoErrorMsg(exchange, "4031", "The token not be allowed to access this API !");
+						return	MonoErrorMsg(exchange, "4031", "The token not be allowed to access this url:" + url);
 					}
 				}else {
 					return	MonoErrorMsg(exchange, "404", "Route not found!");

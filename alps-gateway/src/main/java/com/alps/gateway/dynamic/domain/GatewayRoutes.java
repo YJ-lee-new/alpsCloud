@@ -1,7 +1,6 @@
 package com.alps.gateway.dynamic.domain;
 
 
-import com.alps.common.enums.AbstractEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;

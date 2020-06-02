@@ -1,0 +1,21 @@
+server:
+    port: 8700
+    servlet:
+        session:
+            cookie:
+                name: OAUTH2SESSION
+spring:
+  application:
+    name: oauth2-server
+        # 模板引擎
+  thymeleaf:
+    prefix: classpath:/templates/
+    encoding: utf-8
+    suffix: .html
+    cache: false
+#mybatis plus 设置
+mybatis-plus:
+ #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.alps.base.api.**.entity
+  mapper-locations: classpath:mapper/*.xml        
+

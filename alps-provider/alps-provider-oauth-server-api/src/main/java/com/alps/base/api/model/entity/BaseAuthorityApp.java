@@ -1,6 +1,5 @@
 package com.alps.base.api.model.entity;
 
-import com.alps.common.enums.AbstractEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,7 +24,7 @@ public class BaseAuthorityApp extends AbstractEntity {
     /**
      * 应用ID
      */
-    private String appId;
+    private Long appId;
 
     /**
      * 过期时间:null表示长期

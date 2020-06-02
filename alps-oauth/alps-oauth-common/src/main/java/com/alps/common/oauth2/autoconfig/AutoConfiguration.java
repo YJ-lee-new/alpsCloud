@@ -48,19 +48,19 @@ public class AutoConfiguration {
         log.info("PaginationInterceptor [{}]", paginationInterceptor);
         return paginationInterceptor;
     }
-
-    /**
-     * 默认加密配置
-     *
-     * @return
-     */
-    @Bean
-    @ConditionalOnMissingBean(BCryptPasswordEncoder.class)
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        log.info("BCryptPasswordEncoder [{}]", encoder);
-        return encoder;
-    }
+//
+//    /**
+//     * 默认加密配置
+//     *
+//     * @return
+//     */
+//    @Bean
+//    @ConditionalOnMissingBean(BCryptPasswordEncoder.class)
+//    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+//        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+//        log.info("BCryptPasswordEncoder [{}]", encoder);
+//        return encoder;
+//    }
 
 
     /**

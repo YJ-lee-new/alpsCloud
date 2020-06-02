@@ -1,6 +1,5 @@
 package com.alps.base.api.model.entity;
 
-import com.alps.common.enums.AbstractEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -26,6 +26,16 @@ public class UserConstants
 
     /** 部门正常状态 */
     public static final String DEPT_NORMAL = "0";
+    
+    /**权限类型*/
+    public static final String RBAC_AUTHORITY = "RBAC";
+    public static final String API_AUTHORITY = "API";
+    
+    /**菜单类型*/
+    public static final String SYS_CATAlOG = "C";
+    public static final String SYS_MENU = "F";
+    public static final String SYS_ACTION = "A";
+    
 
     /**
      * 用户名长度限制

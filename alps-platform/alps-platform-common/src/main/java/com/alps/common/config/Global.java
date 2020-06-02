@@ -91,7 +91,7 @@ public class Global
      */
     public static String getCopyrightYear()
     {
-        return StringUtils.nvl(getConfig("alps.copyrightYear"), "2018");
+        return StringUtils.nvl(getConfig("alps.copyrightYear"), "2020");
     }
 
     /**

@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.alps.common.enums.AbstractEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -27,6 +26,11 @@ public class BaseDeveloper extends AbstractEntity {
     @TableId(type = IdType.ID_WORKER)
     private Long userId;
 
+    /**
+     * 用户名
+     */
+    private String account;
+    
     /**
      * 登陆名
      */

@@ -40,10 +40,10 @@ public class IndexController {
      *
      * @return
      */
-    @GetMapping("/login")
+    @GetMapping("/syslogin")
     public String login(HttpServletRequest request) {
     	System.out.println("=====>>");
-        return "login";
+        return "syslogin";
     }
     
     /**
@@ -51,7 +51,7 @@ public class IndexController {
      *
      * @return
      */
-    @GetMapping("/login2")
+    @GetMapping("/login")
     public String login2(HttpServletRequest request) {
     	System.out.println("=====>>");
         return "login";

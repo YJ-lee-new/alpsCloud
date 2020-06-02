@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alps.oauth.uaa.client.web.mapper.SysCompanyMapper">
+    <resultMap id="BaseResultMap" type="com.alps.base.api.model.entity.SysCompany">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="addr" property="addr" jdbcType="VARCHAR"/>
+        <result column="attr" property="attr" jdbcType="VARCHAR"/>
+    </resultMap>
+</mapper>

@@ -17,8 +17,8 @@
    </properties>
   
   <modules>
-  	<module>alps-oauth-server</module>
   	<module>alps-oauth-uaa-admin</module>
   	<module>alps-oauth-common</module>
+  	<module>alps-oauth-uaa-server-web</module>
   </modules>
 </project>

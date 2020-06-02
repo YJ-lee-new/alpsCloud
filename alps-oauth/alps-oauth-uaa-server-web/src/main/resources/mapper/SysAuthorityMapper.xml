@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alps.oauth.uaa.client.web.mapper.SysAuthorityMapper">
+    <resultMap id="BaseResultMap" type="com.alps.base.api.model.entity.SysAuthority">
+        <result property="id"    column="id"    />
+        <result property="companyId"    column="company_id"    />
+        <result property="roleId"    column="role_id"    />
+        <result property="menuId"    column="menu_id"    />
+        <result property="apiId"    column="api_id"    />
+        <result property="path"    column="path"    />
+        <result property="status"    column="status"    />
+    </resultMap>
+	
+	<sql id="selectSysAuthorityVo">
+        select id, company_id, role_id, menu_id, api_id,path, status from sys_authority
+    </sql>
+	
+    <select id="selectSysAuthorityList" parameterType="SysAuthority" resultMap="BaseResultMap">
+        <include refid="selectSysAuthorityVo"/>
+        <where>  
+            <if test="id != null  and id != '' "> and id = #{id}</if>
+             <if test="companyId != null  and companyId != '' "> and company_id = #{companyId}</if>
+             <if test="roleId != null "> and role_id = #{roleId}</if>
+             <if test="menuId != null "> and menu_id = #{menuId}</if>
+             <if test="path != null "> and path = #{path}</if>
+             <if test="apiId != null  and apiId != '' "> and api_id = #{apiId}</if>
+             <if test="status != null "> and status = #{status}</if>
+         </where>
+    </select>
+    
+    <select id="selectSysAuthorityById" parameterType="Long" resultMap="BaseResultMap">
+        <include refid="selectSysAuthorityVo"/>
+        where id = #{id} and status = 1
+    </select>
+    
+    <select id="findAuthorityApiList" parameterType="String" resultMap="BaseResultMap">
+        select a.id, a.company_id, a.role_id, a.menu_id, a.api_id,a.path, a.status  from sys_authority a 
+		LEFT JOIN sys_user_role b ON a.role_id = b.role_id
+		LEFT JOIN sys_user c ON b.user_id = c.user_id
+		WHERE c.account = #{userName}
+		AND  a.path is not Null
+    </select>
+    
+    <select id="selectSysAutoListByRoleId" parameterType="Long" resultMap="BaseResultMap">
+        <include refid="selectSysAuthorityVo"/>
+        where role_id = #{roleId}
+        and status = 1
+    </select>
+    
+    <delete id="deleteByRoleId" parameterType="Long">
+        delete from sys_authority  where role_id = #{roleId}
+    </delete>
+        
+    <insert id="insertSysAuthority" parameterType="SysAuthority">
+        insert into sys_authority
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null  and id != ''  ">id,</if>
+			<if test="companyId != null  and companyId != ''  ">company_id,</if>
+			<if test="roleId != null  ">role_id,</if>
+			<if test="menuId != null  ">menu_id,</if>
+			<if test="apiId != null  and apiId != ''  ">api_id,</if>
+			<if test="path != null  and path != ''  ">path,</if>
+			<if test="status != null  ">status,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null  and id != ''  ">#{id},</if>
+			<if test="companyId != null  and companyId != ''  ">#{companyId},</if>
+			<if test="roleId != null  ">#{roleId},</if>
+			<if test="menuId != null  ">#{menuId},</if>
+			<if test="apiId != null  and apiId != ''  ">#{apiId},</if>
+			<if test="path != null  and path != ''  ">#{path},</if>
+			<if test="status != null  ">#{status},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateSysAuthority" parameterType="SysAuthority">
+        update sys_authority
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="companyId != null  and companyId != ''  ">company_id = #{companyId},</if>
+            <if test="roleId != null  ">role_id = #{roleId},</if>
+            <if test="menuId != null  ">menu_id = #{menuId},</if>
+            <if test="apiId != null  and apiId != ''  ">api_id = #{apiId},</if>
+            <if test="path != null  and path != ''  ">api_id = #{path},</if>
+            <if test="status != null  ">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteSysAuthorityById" parameterType="String">
+        delete from sys_authority where id = #{id}
+    </delete>
+    
+    <delete id="deleteSysAuthorityByAc" parameterType="SysAuthority">
+        delete from sys_authority 
+        <where>  
+             <if test="id != null  and id != '' "> and id = #{id}</if>
+             <if test="companyId != null  and companyId != '' "> and company_id = #{companyId}</if>
+             <if test="roleId != null "> and role_id = #{roleId}</if>
+             <if test="menuId != null "> and menu_id = #{menuId}</if>
+             <if test="apiId != null  and apiId != '' "> and api_id = #{apiId}</if>
+             <if test="path != null  and path != '' "> and path = #{path}</if>
+             <if test="status != null "> and status = #{status}</if>
+         </where>
+    </delete>
+	
+    <delete id="deleteSysAuthorityByIds" parameterType="String">
+        delete from sys_authority where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+    <insert id="batchRoleGateway">
+		insert into sys_authority( company_id,role_id,menu_id,api_id,path) values
+		<foreach item="item" index="index" collection="list" separator=",">
+			(#{item.companyId},#{item.roleId},#{item.menuId},#{item.apiId},#{item.path})
+		</foreach>
+	</insert>
+    
+    
+    
+</mapper>

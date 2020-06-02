@@ -20,11 +20,8 @@
         <module>alps-platform</module>
 		<module>alps-provider</module>
 		<module>alps-oauth</module>
-		<module>alps-system</module>
 		<module>alps-file</module>
 		<module>alps-zuul</module>    
-		<module>alps-base</module>
-		<module>alps-bs</module>
 		<module>alps-job</module>
     </modules>
 

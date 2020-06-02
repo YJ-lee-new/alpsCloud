@@ -1,6 +1,6 @@
 package com.alps.base.api.model;
 
-import com.alps.base.api.model.entity.BaseApi;
+import com.alps.base.api.model.entity.SysApi;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
@@ -14,7 +14,7 @@ import org.apache.commons.lang3.StringUtils;
  * Date:2019年12月7日
  * TodoTODO
  */
-public class IpLimitApi extends BaseApi implements Serializable {
+public class IpLimitApi extends SysApi implements Serializable {
     private static final long serialVersionUID = 1212925216631391016L;
     private Long itemId;
     private Long policyId;

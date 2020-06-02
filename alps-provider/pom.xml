@@ -18,8 +18,5 @@
 	<module>alps-provider-ace-api</module>
 	<module>alps-provider-oauth-server-api</module>
 	<module>alps-provider-system-api</module>
-	<module>alps-provider-base-api</module>
-	<module>alps-provider-bs-kitting-api</module>
-	<module>alps-provider-bs-pack-api</module>
   </modules>
 </project>

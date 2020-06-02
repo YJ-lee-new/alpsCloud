@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alps.oauth.uaa.client.web.mapper.SysAppMapper">
+    
+    <resultMap type="com.alps.base.api.model.entity.SysApp" id="SysAppResult">
+        <result property="appId"    column="app_id"    />
+        <result property="appKey"    column="app_key"    />
+        <result property="secretKey"    column="secret_key"    />
+        <result property="appName"    column="app_name"    />
+        <result property="appNameEn"    column="app_name_en"    />
+        <result property="appIcon"    column="app_icon"    />
+        <result property="appType"    column="app_type"    />
+        <result property="appDesc"    column="app_desc"    />
+        <result property="appOs"    column="app_os"    />
+        <result property="website"    column="website"    />
+        <result property="developerId"    column="developer_id"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="status"    column="status"    />
+        <result property="isPersist"    column="is_persist"    />
+        <result property="scope"    column="scope"    />
+    </resultMap>
+	
+	<sql id="selectSysAppVo">
+        select app_id, app_key, secret_key, app_name, app_name_en, app_icon, app_type, app_desc, app_os, website, developer_id, create_time, update_time, status, is_persist,scope from sys_app
+    </sql>
+	
+    <select id="selectSysAppList" parameterType="SysApp" resultMap="SysAppResult">
+        <include refid="selectSysAppVo"/>
+        <where>  
+            <if test="appId != null  and appId != '' "> and app_id = #{appId}</if>
+             <if test="appKey != null  and appKey != '' "> and app_key = #{appKey}</if>
+             <if test="secretKey != null  and secretKey != '' "> and secret_key = #{secretKey}</if>
+             <if test="appName != null  and appName != '' "> and app_name = #{appName}</if>
+             <if test="appNameEn != null  and appNameEn != '' "> and app_name_en = #{appNameEn}</if>
+             <if test="appIcon != null  and appIcon != '' "> and app_icon = #{appIcon}</if>
+             <if test="appType != null  and appType != '' "> and app_type = #{appType}</if>
+             <if test="appDesc != null  and appDesc != '' "> and app_desc = #{appDesc}</if>
+             <if test="appOs != null  and appOs != '' "> and app_os = #{appOs}</if>
+             <if test="website != null  and website != '' "> and website = #{website}</if>
+             <if test="developerId != null "> and developer_id = #{developerId}</if>
+             <if test="createTime != null "> and create_time = #{createTime}</if>
+             <if test="updateTime != null "> and update_time = #{updateTime}</if>
+             <if test="status != null "> and status = #{status}</if>
+             <if test="isPersist != null "> and is_persist = #{isPersist}</if>
+         </where>
+    </select>
+    
+    <select id="selectSysAppById" parameterType="String" resultMap="SysAppResult">
+        <include refid="selectSysAppVo"/>
+        where app_id = #{appId}
+    </select>
+        
+    <insert id="insertSysApp" parameterType="SysApp">
+        insert into sys_app
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="appId != null  and appId != ''  ">app_id,</if>
+			<if test="appKey != null  and appKey != ''  ">app_key,</if>
+			<if test="secretKey != null  and secretKey != ''  ">secret_key,</if>
+			<if test="appName != null  and appName != ''  ">app_name,</if>
+			<if test="appNameEn != null  and appNameEn != ''  ">app_name_en,</if>
+			<if test="appIcon != null  and appIcon != ''  ">app_icon,</if>
+			<if test="appType != null  and appType != ''  ">app_type,</if>
+			<if test="appDesc != null  and appDesc != ''  ">app_desc,</if>
+			<if test="appOs != null  and appOs != ''  ">app_os,</if>
+			<if test="website != null  and website != ''  ">website,</if>
+			<if test="developerId != null  ">developer_id,</if>
+			<if test="createTime != null  ">create_time,</if>
+			<if test="updateTime != null  ">update_time,</if>
+			<if test="status != null  ">status,</if>
+			<if test="isPersist != null  ">is_persist,</if>
+			<if test="scope != null  ">scope,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="appId != null  and appId != ''  ">#{appId},</if>
+			<if test="appKey != null  and appKey != ''  ">#{appKey},</if>
+			<if test="secretKey != null  and secretKey != ''  ">#{secretKey},</if>
+			<if test="appName != null  and appName != ''  ">#{appName},</if>
+			<if test="appNameEn != null  and appNameEn != ''  ">#{appNameEn},</if>
+			<if test="appIcon != null  and appIcon != ''  ">#{appIcon},</if>
+			<if test="appType != null  and appType != ''  ">#{appType},</if>
+			<if test="appDesc != null  and appDesc != ''  ">#{appDesc},</if>
+			<if test="appOs != null  and appOs != ''  ">#{appOs},</if>
+			<if test="website != null  and website != ''  ">#{website},</if>
+			<if test="developerId != null  ">#{developerId},</if>
+			<if test="createTime != null  ">#{createTime},</if>
+			<if test="updateTime != null  ">#{updateTime},</if>
+			<if test="status != null  ">#{status},</if>
+			<if test="isPersist != null  ">#{isPersist},</if>
+			<if test="scope != null  ">#{scope},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateSysApp" parameterType="SysApp">
+        update sys_app
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="appKey != null  and appKey != ''  ">app_key = #{appKey},</if>
+            <if test="secretKey != null  and secretKey != ''  ">secret_key = #{secretKey},</if>
+            <if test="appName != null  and appName != ''  ">app_name = #{appName},</if>
+            <if test="appNameEn != null  and appNameEn != ''  ">app_name_en = #{appNameEn},</if>
+            <if test="appIcon != null  and appIcon != ''  ">app_icon = #{appIcon},</if>
+            <if test="appType != null  and appType != ''  ">app_type = #{appType},</if>
+            <if test="appDesc != null  and appDesc != ''  ">app_desc = #{appDesc},</if>
+            <if test="appOs != null  and appOs != ''  ">app_os = #{appOs},</if>
+            <if test="website != null  and website != ''  ">website = #{website},</if>
+            <if test="developerId != null  ">developer_id = #{developerId},</if>
+            <if test="createTime != null  ">create_time = #{createTime},</if>
+            <if test="updateTime != null  ">update_time = #{updateTime},</if>
+            <if test="status != null  ">status = #{status},</if>
+            <if test="isPersist != null  ">is_persist = #{isPersist},</if>
+            <if test="scope != null  ">scope = #{scope},</if>
+        </trim>
+        where app_id = #{appId}
+    </update>
+
+	<delete id="deleteSysAppById" parameterType="String">
+        delete from sys_app where app_id = #{appId}
+    </delete>
+	
+    <delete id="deleteSysAppByIds" parameterType="String">
+        delete from sys_app where app_id in 
+        <foreach item="appId" collection="array" open="(" separator="," close=")">
+            #{appId}
+        </foreach>
+    </delete>
+    
+</mapper>

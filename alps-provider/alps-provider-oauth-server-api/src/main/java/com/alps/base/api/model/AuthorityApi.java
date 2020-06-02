@@ -1,6 +1,6 @@
 package com.alps.base.api.model;
 
-import com.alps.base.api.model.entity.BaseApi;
+import com.alps.base.api.model.entity.SysApi;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
@@ -11,7 +11,7 @@ import java.util.Objects;
  * Todo API权限
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AuthorityApi extends BaseApi implements Serializable {
+public class AuthorityApi extends SysApi implements Serializable {
 
     private static final long serialVersionUID = 3474271304324863160L;
     /**

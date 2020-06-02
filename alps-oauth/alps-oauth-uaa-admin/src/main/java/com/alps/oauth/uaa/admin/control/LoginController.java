@@ -1,7 +1,7 @@
 package com.alps.oauth.uaa.admin.control;
 
-import com.alps.base.api.model.entity.BaseMenu;
-import com.alps.base.api.model.entity.BaseSysUser;
+import com.alps.base.api.model.entity.SysMenu;
+import com.alps.base.api.model.entity.SysUser;
 import com.alps.common.core.domain.ResultBody;
 import com.alps.common.oauth2.security.AlpsHelper;
 import com.alps.common.oauth2.security.AlpsUserDetails;
@@ -11,7 +11,6 @@ import com.alps.oauth.uaa.admin.client.AlpsOAuth2ClientProperties;
 import com.alps.oauth.uaa.admin.feign.BaseUserServiceClient;
 import com.alps.oauth.uaa.admin.serivceImp.ClientDetailsServiceImpl;
 import com.alps.oauth.uaa.admin.service.AppRedisService;
-import com.alps.platform.log.model.SysUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -84,7 +83,7 @@ public class LoginController {
 //    })
     @PostMapping("/client/token")
     public ResultBody<OAuth2AccessToken> getLoginToken(@RequestBody SysUser user) throws Exception {
-        OAuth2AccessToken result = appRedisService.getToken(user.getUsername(), user.getPassword(), null,null);
+        OAuth2AccessToken result = appRedisService.getToken(user.getUserName(), user.getPassword(), null,null);
        return ResultBody.ok().data(result);
     }
 
@@ -106,9 +105,9 @@ public class LoginController {
      * @return 用户信息
      */
     @PostMapping("/user/getMenus")
-    public ResultBody getMenus(String companyId)
+    public ResultBody getMenus(String userName, String companyId)
     {
-        return userServiceClient.getMenus(companyId);
+        return userServiceClient.getMenus(userName,companyId);
     }
 
     /**

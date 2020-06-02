@@ -1,6 +1,9 @@
 package com.alps.oauth.uaa.admin.serivceImp;
 
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import com.alps.base.api.model.UserAccount;
 import com.alps.common.oauth2.security.AlpsUserDetails;
+import com.alps.common.oauth2.utils.WebUtils;
 import com.alps.oauth.uaa.admin.client.AlpsOAuth2ClientProperties;
 import com.alps.common.constant.BaseConstants;
 import com.alps.common.core.domain.ResultBody;

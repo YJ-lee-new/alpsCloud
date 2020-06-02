@@ -1,6 +1,6 @@
 package com.alps.base.api.model;
 
-import com.alps.base.api.model.entity.BaseApi;
+import com.alps.base.api.model.entity.SysApi;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;

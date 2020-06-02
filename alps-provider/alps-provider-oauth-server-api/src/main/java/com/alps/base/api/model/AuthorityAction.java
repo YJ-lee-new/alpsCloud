@@ -1,6 +1,6 @@
 package com.alps.base.api.model;
 
-import com.alps.base.api.model.entity.BaseAction;
+import com.alps.base.api.model.entity.SysAction;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Objects;
@@ -10,7 +10,7 @@ import java.util.Objects;
  * TodoTODO
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AuthorityAction extends BaseAction {
+public class AuthorityAction extends SysAction {
     private static final long serialVersionUID = -691740581827186502L;
 
     /**

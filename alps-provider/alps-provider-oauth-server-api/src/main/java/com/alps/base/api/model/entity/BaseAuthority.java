@@ -1,6 +1,5 @@
 package com.alps.base.api.model.entity;
 
-import com.alps.common.enums.AbstractEntity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -15,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-@TableName("base_authority")
+@TableName("sys_authority")
 public class BaseAuthority  extends AbstractEntity {
     @TableId(type = IdType.ID_WORKER)
     private Long authorityId;

@@ -1,6 +1,6 @@
 package com.alps.base.api.model;
 
-import com.alps.base.api.model.entity.BaseMenu;
+import com.alps.base.api.model.entity.SysMenu;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
@@ -12,7 +12,7 @@ import java.util.Objects;
  * Todo菜单权限
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AuthorityMenu extends BaseMenu implements Serializable {
+public class AuthorityMenu extends SysMenu implements Serializable {
 
     private static final long serialVersionUID = 3474271304324863160L;
     /**

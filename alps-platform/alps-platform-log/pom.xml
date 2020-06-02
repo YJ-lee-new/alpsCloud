@@ -27,6 +27,15 @@
            <artifactId>alps-platform-common</artifactId>
            <version>${alps.paltform.version}</version>
         </dependency>
+        
+        		
+		<!-- 非关系型数据库配置 -->
+		<dependency>
+			<groupId>alps.platform.redis</groupId>
+            <artifactId>alps-platform-redis</artifactId>
+            <version>${alps.paltform.version}</version>
+		</dependency>
+        
 		
   		
         <!-- apo -->
@@ -44,6 +53,19 @@
 		<dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-sleuth-core</artifactId>
+		</dependency>
+		
+		      <!-- springboot details实体核心包-->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<!-- 加入spring security spring security oauth2的处理 -->
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>${security-oauth2.version}</version>
+			<optional>true</optional>
 		</dependency>
 		
 

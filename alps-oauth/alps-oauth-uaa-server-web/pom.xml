@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>alps-oauth</groupId>
+    <artifactId>alps-oauth</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <groupId>alps-oauth-uaa-server-web</groupId>
+  <artifactId>alps-oauth-uaa-server-web</artifactId>
+
+   <dependencies>
+         <dependency>
+	       <groupId>org.springframework.cloud</groupId>
+		   <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	    </dependency>
+	    <dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>${security-oauth2.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+      <!--  feigin http rpc -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		
+  		<dependency>
+		    <groupId>alps-provider-oauth-server-api</groupId>
+		    <artifactId>alps-provider-oauth-server-api</artifactId>
+            <version>${alps.paltform.version}</version>
+  		</dependency>
+  		
+        <dependency>
+  			<groupId>alps.platform.database</groupId>
+            <artifactId>alps-platform-database</artifactId>
+            <version>${alps.paltform.version}</version>
+  		</dependency>
+  		
+        
+        
+        
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.alps.oauth.uaa.client.web.mapper.SysApiMapper">
+    <resultMap id="BaseResultMap" type="com.alps.base.api.model.entity.SysApi">
+        <id column="api_id" property="apiId" jdbcType="BIGINT"/>
+        <result column="api_code" property="apiCode" jdbcType="VARCHAR"/>
+        <result column="api_name" property="apiName" jdbcType="VARCHAR"/>
+        <result column="api_desc" property="apiDesc" jdbcType="VARCHAR"/>
+        <result column="api_category" property="apiCategory" jdbcType="VARCHAR"/>
+        <result column="service_id" property="serviceId" jdbcType="BIGINT"/>
+        <result column="path" property="path" jdbcType="VARCHAR"/>
+        <result column="priority" property="priority" jdbcType="INTEGER"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="is_persist" property="isPersist" jdbcType="INTEGER"/>
+        <result column="is_open" property="isOpen" jdbcType="INTEGER"/>
+        <result column="auth_type" property="authType" jdbcType="INTEGER"/>
+        <result column="content_type" property="contentType" jdbcType="VARCHAR"/>
+        <result column="class_name" property="className" jdbcType="VARCHAR"/>
+        <result column="method_name" property="methodName" jdbcType="VARCHAR"/>
+        <result property="createBy"    column="create_by" jdbcType="VARCHAR"   />
+        <result property="updateBy"    column="update_by"   jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <sql id="selectSysApiVo">
+       select api_id,api_code, service_id,(SELECT app_name FROM sys_app b where b.app_id =  a.service_id) as app_name,  api_name, path, api_desc, create_by, CONCAT(api_name,"-->",path,"-->",api_desc)as apiShow, create_time, update_by, update_time, api_category, status, method_name from sys_api a
+    </sql>
+	
+    <select id="selectSysApiList" parameterType="SysApi" resultMap="BaseResultMap">
+        <include refid="selectSysApiVo"/>
+        <where>  
+            <if test="apiId != null  and apiId != '' "> and api_id = #{apiId}</if>
+             <if test="serviceId != null  and serviceId != '' "> and service_id = #{serviceId}</if>
+             <if test="apiCode != null  and apiCode != '' "> and api_Code = #{apiCode}</if>
+             <if test="apiName != null  and apiName != '' "> and api_name = #{apiName}</if>
+             <if test="path != null  and path != '' "> and path = #{path}</if>
+             <if test="apiDesc != null  and apiDesc != '' "> and api_desc = #{apiDesc}</if>
+             <if test="createBy != null  and createBy != '' "> and create_by = #{createBy}</if>
+             <if test="createTime != null "> and create_time = #{createTime}</if>
+             <if test="updateBy != null  and updateBy != '' "> and update_by = #{updateBy}</if>
+             <if test="updateTime != null "> and update_time = #{updateTime}</if>
+             <if test="apiCategory != null  and apiCategory != '' "> and api_category = #{apiCategory}</if>
+             <if test="status != null "> and status = #{status}</if>
+             <if test="methodName != null  and methodName != '' "> and method_name = #{methodName}</if>
+         </where>
+         order by service_id
+    </select>
+    
+    <select id="selectSysApiById" parameterType="String" resultMap="BaseResultMap">
+        <include refid="selectSysApiVo"/>
+        where api_id = #{apiId}
+    </select>
+
+	<delete id="deleteSysApiById" parameterType="String">
+        delete from sys_api where api_id = #{apiId}
+    </delete>
+	
+    <delete id="deleteSysApiByIds" parameterType="String">
+        delete from sys_api where api_id in 
+        <foreach item="apiId" collection="array" open="(" separator="," close=")">
+            #{apiId}
+        </foreach>
+    </delete>
+    
+</mapper>

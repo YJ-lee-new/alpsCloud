@@ -3,10 +3,13 @@ package com.alps.oauth.uaa.admin.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -15,9 +18,16 @@ import org.springframework.security.oauth2.provider.authentication.BearerTokenEx
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.authentication.logout.CookieClearingLogoutHandler;
 import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
+import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 import com.alps.common.oauth2.exception.AlpsAccessDeniedHandler;
 import com.alps.common.oauth2.exception.AlpsAuthenticationEntryPoint;
+import com.alps.common.oauth2.utils.PasswordEncoderUtil;
+import com.alps.oauth.uaa.admin.handler.SecurityAuthenticationFailureHandler;
+import com.alps.oauth.uaa.admin.handler.SecurityAuthenticationSuccessHandler;
+import com.alps.oauth.uaa.admin.handler.SecurityLogoutSuccessHandler;
+import com.alps.oauth.uaa.admin.properties.SecurityProperties;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -35,21 +45,32 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
     @Autowired
     private TokenStore tokenStore;
+    @Autowired
+    private SecurityProperties securityProperties;
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new PasswordEncoderUtil();
+    }
 
     private BearerTokenExtractor tokenExtractor = new BearerTokenExtractor();
 
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+    	 CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+         encodingFilter.setEncoding("UTF-8");
+         encodingFilter.setForceEncoding(true);
+         http.addFilterBefore(encodingFilter, CsrfFilter.class);
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login/**","/oauth/**","/client/token").permitAll()
+                .antMatchers(securityProperties.getMatchers()).permitAll()
                 // 监控端点内部放行
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login").permitAll()
+                .formLogin().loginPage(securityProperties.getLoginPage()).permitAll()
                 .and()
                 .logout().permitAll()
                 // /logout退出清除cookie
@@ -65,6 +86,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 // 禁用httpBasic
                 .httpBasic().disable();
     }
+    
 
 
     public class LogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {

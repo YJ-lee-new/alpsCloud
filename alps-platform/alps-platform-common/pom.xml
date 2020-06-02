@@ -21,13 +21,6 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.1</version>
 		</dependency>
-		
-		<!-- 非关系型数据库配置 -->
-		<dependency>
-			<groupId>alps.platform.redis</groupId>
-            <artifactId>alps-platform-redis</artifactId>
-            <version>${alps.paltform.version}</version>
-		</dependency>
         
         	<!-- 获取系统信息 -->
 		<dependency>
@@ -42,21 +35,6 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
-        
-		<!-- pagehelper 分页插件 -->
-		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			<version>${pagehelper.boot.version}</version>
-		</dependency>
-		
-		<!-- Shiro使用Srping框架 -->
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-spring</artifactId>
-			<version>${shiro.version}</version>
-		</dependency>
-		
 		<!-- API文档配置 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -93,13 +71,6 @@
 			<artifactId>commons-io</artifactId>
 			<version>${commons.io.version}</version>
 		</dependency>
-
-		<!-- 文件上传工具类 -->
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>${commons.fileupload.version}</version>
-		</dependency>
 		
 		<!-- HTML解析器 -->
 		<dependency>
@@ -120,12 +91,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
-		
-		<dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.0.6</version>
-        </dependency>
+
 		
 		<!-- yml解析器 -->
 		<dependency>
@@ -146,17 +112,10 @@
 		    <artifactId>javax.servlet-api</artifactId>
 		</dependency>
 		
-		 	<!--验证码 -->
 		<dependency>
-			<groupId>com.github.penggle</groupId>
-			<artifactId>kaptcha</artifactId>
-			<version>${kaptcha.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>javax.servlet-api</artifactId>
-					<groupId>javax.servlet</groupId>
-				</exclusion>
-			</exclusions>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
+		    <version>1.9.3</version>
 		</dependency>
 		
 		
@@ -173,19 +132,6 @@
 			<version>1.5.2</version>
 		</dependency>
 		
-	    <!-- springboot details实体核心包-->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-		</dependency>
-		<!-- 加入spring security spring security oauth2的处理 -->
-		<dependency>
-			<groupId>org.springframework.security.oauth</groupId>
-			<artifactId>spring-security-oauth2</artifactId>
-			<version>${security-oauth2.version}</version>
-			<optional>true</optional>
-		</dependency>
-		<!--  feigin http rpc -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alps.oauth.uaa.client.web.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.alps.base.api.model.entity.SysUser">
+     <id column="user_id" jdbcType="BIGINT" property="userId"/>
+     <result column="dept_id" jdbcType="BIGINT" property="deptId"/>
+     <result column="account" jdbcType="VARCHAR" property="account" />
+     <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+     <result column="user_type" jdbcType="VARCHAR" property="userType" />
+     <result column="email" jdbcType="VARCHAR" property="email"/>
+     <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+     <result column="sex" property="sex" jdbcType="VARCHAR"/>
+     <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
+     <result column="password" jdbcType="VARCHAR" property="password" />
+     <result column="status" property="status" jdbcType="BIGINT"/>
+     <result column="account_type" jdbcType="VARCHAR" property="accountType" />
+     <result column="domain" jdbcType="VARCHAR" property="domain" />
+     <result column="register_ip" jdbcType="VARCHAR" property="registerIp"/>
+     <result column="del_flag"   jdbcType="VARCHAR"  property="delFlag"   />
+     <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+     <result column="company_id"  jdbcType="VARCHAR" property="companyId"/>
+     <result property="createBy"    column="create_by" jdbcType="VARCHAR"   />
+     <result property="updateBy"    column="update_by"   jdbcType="VARCHAR" />
+  </resultMap>
+  
+  	<sql id="selectUserVo">
+        select  u.user_id, u.dept_id, u.account, u.user_name, u.email, u.mobile, u.sex, u.avatar, u.password, u.status, u.create_time, u.account_type, u.domain,
+       		    d.dept_id, d.parent_id, d.dept_name, d.order_num, d.status as dept_status,
+       		    r.role_id, r.role_name, r.role_code, r.role_sort, r.data_scope, r.status as role_status
+		from sys_user u
+			 left join sys_dept d on u.dept_id = d.dept_id
+			 left join sys_user_role ur on u.user_id = ur.user_id
+			 left join sys_role r on r.role_id = ur.role_id
+    </sql>
+  
+  
+  	<select id="selectUserById" parameterType="Long" resultMap="com.alps.oauth.uaa.client.web.mapper.SysUserMapper.BaseResultMap">
+		<include refid="selectUserVo"/>
+		where u.user_id = #{userId}
+	</select>
+	
+  	<select id="selectAuthorityUserList" parameterType="SysUser" resultMap="com.alps.oauth.uaa.client.web.mapper.SysUserMapper.BaseResultMap">
+		   select distinct u.user_id, u.dept_id, u.account, u.user_name, u.email, u.mobile, u.status, u.create_time
+	    from sys_user u
+			 left join sys_dept d on u.dept_id = d.dept_id
+			 left join sys_user_role ur on u.user_id = ur.user_id
+			 left join sys_role r on r.role_id = ur.role_id
+	    where u.del_flag = '0' and r.role_id = #{roleId}
+	    <if test="account != null and account != ''">
+			AND u.account like concat('%', #{account}, '%')
+		</if>
+		<if test="mobile != null and mobile != ''">
+			AND u.mobile like concat('%', #{mobile}, '%')
+		</if>
+	</select>
+	
+  	<select id="selectUnAuthorityUserList" parameterType="SysUser" resultMap="com.alps.oauth.uaa.client.web.mapper.SysUserMapper.BaseResultMap">
+		   select distinct u.user_id, u.dept_id, u.account, u.user_name, u.email, u.mobile, u.status, u.create_time
+	    from sys_user u
+			 left join sys_dept d on u.dept_id = d.dept_id
+			 left join sys_user_role ur on u.user_id = ur.user_id
+			 left join sys_role r on r.role_id = ur.role_id
+	    where u.del_flag = '0' and (r.role_id != #{roleId} or r.role_id IS NULL)
+	    and u.user_id not in (select u.user_id from sys_user u inner join sys_user_role ur on u.user_id = ur.user_id and ur.role_id = #{roleId})
+	    <if test="account != null and account != ''">
+			AND u.account like concat('%', #{account}, '%')
+		</if>
+		<if test="mobile != null and mobile != ''">
+			AND u.mobile like concat('%', #{mobile}, '%')
+		</if>
+	</select>
+	
+	<delete id="deleteUserByIds" parameterType="Long">
+ 		update sys_user set del_flag = '2', status = '0'  where user_id in
+ 		<foreach collection="array" item="userId" open="(" separator="," close=")">
+ 			#{userId}
+        </foreach> 
+ 	</delete>
+ 	
+  
+   <select id="selectUserList" parameterType="SysUser" resultMap="com.alps.oauth.uaa.client.web.mapper.SysUserMapper.BaseResultMap">
+		select u.user_id, u.dept_id, u.account, u.user_name, u.email, u.mobile, u.password, u.sex, u.avatar,  u.status,  u.create_by, u.create_time,  d.dept_name from sys_user u
+		left join sys_dept d on u.dept_id = d.dept_id
+		where u.status = '1'
+		<if test="account != null and account != ''">
+			AND u.account like concat('%', #{account}, '%')
+		</if>
+		<if test="status != null and status != ''">
+			AND u.status = #{status}
+		</if>
+		<if test="mobile != null and mobile != ''">
+			AND u.mobile like concat('%', #{mobile}, '%')
+		</if>
+		<if test="params.beginTime != null and params.beginTime != ''"><!-- 开始时间检索 -->
+			AND date_format(u.create_time,'%y%m%d') &gt;= date_format(#{params.beginTime},'%y%m%d')
+		</if>
+		<if test="params.endTime != null and params.endTime != ''"><!-- 结束时间检索 -->
+			AND date_format(u.create_time,'%y%m%d') &lt;= date_format(#{params.endTime},'%y%m%d')
+		</if>
+		<if test="deptId != null and deptId != 0">
+			AND (u.dept_id = #{deptId} OR u.dept_id IN ( SELECT t.dept_id FROM sys_dept t WHERE FIND_IN_SET (#{deptId},ancestors) ))
+		</if>
+	</select>
+  
+</mapper>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<th:block th:include="include :: header('修改菜单')" />
+</head>
+<body class="white-bg">
+	<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+		<form class="form-horizontal m" id="form-menu-edit" th:object="${menu}">
+			<input name="menuId"   type="hidden" th:field="*{menuId}"   />
+			<input id="treeId" name="parentId" type="hidden" th:field="*{parentId}" />
+			
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">所属APP：</label>
+				<div class="col-sm-8">
+					 <select id="serviceId" name="serviceId" class="form-control select2-multiple" th:field="*{serviceId}"  required="required" >
+								<option th:each="app:${appList}" th:value="${app.appId}" th:text="${app.appName}" th:selected="${app.appId == serviceId}"   ></option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label ">上级菜单：</label>
+				<div class="col-sm-8">
+				    <div class="input-group">
+						<input class="form-control" type="text" onclick="selectMenuTree()" id="treeName" readonly="true" th:value="${menu.parentName == null ? '无' : menu.parentName}">
+					    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+				    </div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">菜单类型：</label>
+				<div class="col-sm-8">
+					<label class="radio-box"> <input type="radio" th:field="*{menuType}" name="menuType" value="C" /> 目录 </label> 
+					<label class="radio-box"> <input type="radio" th:field="*{menuType}" name="menuType" value="M" /> 菜单 </label> 
+					<label class="radio-box"> <input type="radio" th:field="*{menuType}" name="menuType" value="A" /> 事件 </label> 
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">菜单名称：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="menuName" id="menuName" th:field="*{menuName}" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">请求地址：</label>
+				<div class="col-sm-8">
+					<input id="url" name="url" class="form-control" type="text" th:field="*{url}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">显示排序：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="orderNum" th:field="*{orderNum}" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">图标：</label>
+				<div class="col-sm-8">
+					<input id="icon" name="icon" class="form-control" type="text" placeholder="选择图标" th:field="*{icon}">
+                    <div class="ms-parent" style="width: 100%;">
+                        <div class="icon-drop animated flipInX" style="display: none;max-height:200px;overflow-y:auto">
+                            <div data-th-include="system/menu/icon"></div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">菜单状态：</label>
+					<div class="col-sm-8">
+                            <div class="radio-box" >
+                            <input type="radio" name="status" id="0" value="0" th:checked="${menu.status == 1 ? true : false}" ><label> 有效</label>
+                            </div>
+                            <div class="radio-box" >
+                            <input type="radio" name="status" id="1" value="1" th:checked="${menu.status == 0 ? true : false}" > <label>无效</label>
+                            </div>
+                        </div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">请求协议：</label>
+					<div class="col-sm-8">
+						<label class="radio-box"> <input type="radio" name="scheme" value="http//" th:checked="${menu.scheme == 'http:' ? true : false}"  /> http: </label> 
+						<label class="radio-box"> <input type="radio" name="scheme" value="https//" th:checked="${menu.scheme == 'https:' ? true : false}" />https:</label> 
+					</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label">API接口：</label>
+				   <div class="input-group">
+					    <input class="form-control" type="text" onclick="selectApiTree()" id="apiName"  name="apiName" readonly="true" th:value="${menu.apiName}">
+				        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+				  </div>
+			</div>
+		</form>
+	</div>
+	<th:block th:include="include :: footer" />
+	 <script>
+        var prefix = ctx + "system/menu";
+
+        $(function() {
+            var menuType = $('input[name="menuType"]:checked').val();
+            menuVisible(menuType);
+        });
+
+        $("#form-menu-edit").validate({
+        	onkeyup: false,
+        	rules:{
+        		menuType:{
+        			required:true,
+        		},
+        		menuName:{
+        			remote: {
+                        url: prefix + "/checkMenuNameUnique",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                        	"menuId": function() {
+                                return $("#menuId").val();
+                            },
+                            "parentId": function() {
+		                		return $("input[name='parentId']").val();
+		                    },
+                			"menuName": function() {
+                                return $.common.trim($("#menuName").val());
+                            }
+                        },
+                        dataFilter: function(data, type) {
+                        	return $.validate.unique(data);
+                        }
+                    }
+        		},
+        		orderNum:{
+        			digits:true
+        		},
+        	},
+        	messages: {
+                "menuName": {
+                    remote: "菜单已经存在"
+                }
+            },
+            focusCleanup: true
+        });
+        
+        function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(prefix + "/edit", $('#form-menu-edit').serialize());
+	        }
+	    }
+
+        $(function() {
+            $("input[name='icon']").focus(function() {
+                $(".icon-drop").show();
+            });
+            $("#form-menu-edit").click(function(event) {
+                var obj = event.srcElement || event.target;
+                if (!$(obj).is("input[name='icon']")) {
+                    $(".icon-drop").hide();
+                }
+            });
+            $(".icon-drop").find(".ico-list i").on("click",
+            function() {
+                $('#icon').val($(this).attr('class'));
+            });
+            $('input').on('ifChecked',
+            function(event) {
+                var menuType = $(event.target).val();
+                menuVisible(menuType);
+            });
+        });
+
+        function menuVisible(menuType) {
+        	if (menuType == "C") {
+                $("#url").parents(".form-group").hide();
+                $("#icon").parents(".form-group").show();
+                $("#scheme").parents(".form-group").hide();
+                $("#menuCode").parents(".form-group").hide();
+                $("#apiName").parents(".form-group").hide();
+            } else if (menuType == "M") {
+            	$("#url").parents(".form-group").show();
+                $("#icon").parents(".form-group").show();
+                $("#scheme").parents(".form-group").show();
+                $("#menuCode").parents(".form-group").hide();
+                $("#apiName").parents(".form-group").hide();
+            } else if (menuType == "A") {
+            	$("#url").parents(".form-group").hide();
+                $("#icon").parents(".form-group").hide();
+                $("#scheme").parents(".form-group").show();
+                $("#menuCode").parents(".form-group").show();
+                $("#apiName").parents(".form-group").show();
+            } 
+        }
+
+        /*菜单管理-修改-选择菜单树*/
+        function selectMenuTree() {
+        	var menuId = $("#treeId").val();
+        	if(menuId > 0) {
+        		var url = prefix + "/selectMenuTree/" + menuId;
+        		$.modal.open("选择菜单", url, '380', '380');
+        	} else {
+        		$.modal.alertError("主菜单不能选择");
+        	}
+        }
+        
+        function selectMenuTree() {
+        	var menuId = $("#treeId").val();
+        	if(menuId > 0) {
+        		var url = prefix + "/selectMenuTree/" + menuId;
+        		var options = {
+       				title: '菜单选择',
+       				width: "380",
+       				url: url,
+       				callBack: doSubmit
+       			};
+       			$.modal.openOptions(options);
+        	} else {
+        		$.modal.alertError("主菜单不能选择");
+        	}
+		}
+        
+        function selectApiTree() {
+        	var url = prefix + "/selectApiTree";
+			var options = {
+				title: '选择API',
+				width: "500",
+				url: url,
+				callBack: selecApiNode
+			};
+			$.modal.openOptions(options);
+		}
+		
+		function doSubmit(index, layero){
+			var body = layer.getChildFrame('body', index);
+   			$("#treeId").val(body.find('#treeId').val());
+   			$("#treeName").val(body.find('#treeName').val());
+   			layer.close(index);
+		}
+		
+		function selecApiNode(index, layero){
+			var body = layer.getChildFrame('body', index);
+   			$("#apiId").val(body.find('#apiId').val());
+   			$("#apiName").val(body.find('#apiName').val());
+   			layer.close(index);
+		}
+    </script>
+</body>
+</html>

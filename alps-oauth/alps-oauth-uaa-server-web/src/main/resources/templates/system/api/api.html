@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+	<th:block th:include="include :: header('sys_api列表')" />
+</head>
+<body class="gray-bg">
+    
+     <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+				<form id="api-form">
+					<div class="select-list">
+						<ul>
+							<li>
+							       服务名称：<select name="serviceId"  >
+												<option value="">----</option>
+												<option th:each="app:${appList}" th:value="${app.appId}" th:text="${app.appName}" ></option>
+									</select>
+							</li>
+
+							<li>
+								接口Code：<input type="text" name="apiCode"/>
+							</li>
+
+
+							<li>
+								接口名称：<input type="text" name="apiName"/>
+							</li>
+
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+							</li>
+						</ul>
+					</div>
+				</form>
+			</div>
+			
+	        <div class="btn-group-sm" id="toolbar" role="group">
+				<a class="btn btn-success" onclick="$.operate.add()">
+					<i class="fa fa-plus"></i> 添加
+				</a>
+				<a class="btn btn-primary btn-edit disabled" onclick="$.operate.edit()" >
+					<i class="fa fa-edit"></i> 修改
+				</a>
+				<a class="btn btn-danger btn-del btn-del disabled" onclick="$.operate.removeAll()" >
+					<i class="fa fa-remove"></i> 删除
+				</a>
+			</div>
+			<div class="col-sm-12 select-table table-striped">
+				<table id="bootstrap-table" data-mobile-responsive="true"></table>
+			</div>
+		</div>
+	</div>
+    <div th:include="include :: footer"></div>
+    <script th:inline="javascript">
+        var editFlag = true;
+        var removeFlag = true;
+        var prefix = ctx + "system/api";
+
+        $(function() {
+            var options = {
+                url: prefix + "/list",
+                createUrl: prefix + "/add",
+                updateUrl: prefix + "/edit/{id}",
+                removeUrl: prefix + "/remove",
+				exportUrl: prefix + "/export",
+                modalName: "接口列表",
+		        showExport: true,
+                columns: [{
+		            checkbox: true
+		        },
+				{
+					field : 'apiId', 
+					title : '逻辑流ID/API  ID',
+					visible: false
+				},
+				{
+					field : 'appName', 
+					title : 'app名称',
+					sortable: true
+				},
+				{
+					field : 'apiCode', 
+					title : '接口Code',
+					sortable: true
+				},
+				{
+					field : 'apiName', 
+					title : '接口名称',
+					sortable: true
+				},
+				{
+					field : 'path', 
+					title : '对外提供服务的URL',
+					sortable: true
+				},
+				{
+					field : 'apiDesc', 
+					title : '逻辑流描述/API描述'
+				},
+				{
+					field : 'status', 
+					title : '是否有效',
+					sortable: true
+				},
+				{
+					field : 'methodName', 
+					title : '方法名',
+					sortable: true
+				},
+		        {
+		            title: '操作',
+		            align: 'center',
+		            formatter: function(value, row, index) {
+		            	var actions = [];
+		            	actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="#" onclick="$.operate.edit(\'' + row.apiId + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+                        actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="#" onclick="$.operate.remove(\'' + row.apiId + '\')"><i class="fa fa-remove"></i>删除</a>');
+						return actions.join('');
+		            }
+		        }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

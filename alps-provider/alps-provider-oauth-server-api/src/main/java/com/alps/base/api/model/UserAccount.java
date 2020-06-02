@@ -1,6 +1,6 @@
 package com.alps.base.api.model;
 
-import com.alps.base.api.model.entity.BaseSysUser;
+import com.alps.base.api.model.entity.SysUser;
 import com.alps.common.oauth2.security.AlpsAuthority;
 import com.google.common.collect.Lists;
 
@@ -12,7 +12,7 @@ import java.util.Map;
  * Date:2019年12月7日
  * TodoTODO
  */
-public class UserAccount extends BaseSysUser implements Serializable {
+public class UserAccount extends SysUser implements Serializable {
     private static final long serialVersionUID = 6717800085953996702L;
 
     private Collection<Map> roles = Lists.newArrayList();

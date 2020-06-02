@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<th:block th:include="include :: header('修改角色')" />
+	<th:block th:include="include :: ztree-css" />
+</head>
+<body class="white-bg">
+	<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+		<form class="form-horizontal m" id="form-role-edit" th:object="${role}">
+			<input id="roleId" name="roleId" type="hidden" th:field="*{roleId}"/>
+			
+			<div class="form-group">	
+				<label class="col-sm-3 control-label">公司名称：</label>
+				<div class="col-sm-8">
+					 <select id="companyId" name="companyId" class="form-control select2-multiple" th:field="*{companyId}"  required="required" >
+								<option th:each="com:${companyList}" th:value="${com.id}" th:text="${com.name}" th:selected="${com.id == companyId}"  ></option>
+					</select>
+				</div>
+			</div>
+			
+		<div class="form-group">
+				<label class="col-sm-3 control-label">权限编码：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleCode" id="roleCode" th:field="*{roleCode}" required>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label ">角色名称：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleName" id="roleName" th:field="*{roleName}" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">显示顺序：</label>
+				<div class="col-sm-8">
+					<input class="form-control" type="text" name="roleSort" id="roleSort" th:field="*{roleSort}" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">状态：</label>
+				<div class="col-sm-8">
+					<label class="toggle-switch switch-solid">
+                        <input type="checkbox" id="status" th:checked="${role.status == 1 ? true : false}">
+                        <span></span>
+                    </label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">备注：</label>
+				<div class="col-sm-8">
+					<input id="roleDesc" name="roleDesc" class="form-control" type="text" th:field="*{roleDesc}">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label">权限类型：</label>
+					<div class="col-sm-8" >
+						<label class="radio-box">
+						 <input type="radio" id="authorityTpye" name="authorityTpye" value="RBAC"  th:checked="${role.authorityTpye == 'RBAC'}"  required  /> RBAC 
+						</label> 
+						<label class="radio-box"> 
+						 <input type="radio" id="authorityTpye" name="authorityTpye"  value="API" th:checked="${role.authorityTpye == 'API'}"  required/> API网关
+						</label> 
+					</div>
+			</div>
+			
+			<div class="form-group" style="display:none;">
+				<label class="col-sm-3 control-label">菜单清单</label>
+				<div class="col-sm-8">
+					<div id="menuTrees"  class="ztree"></div>
+				</div>
+			</div>
+			<div class="form-group" style="display:none;">
+				<label class="col-sm-3 control-label">API清单</label>
+				<div class="col-sm-8">
+					<div id="apiTrees" class="ztree"></div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<th:block th:include="include :: footer" />
+	<th:block th:include="include :: ztree-js" />
+	<script type="text/javascript">
+	var roleId = $("input[name='roleId']").val();
+	this.onloadMenuTrees = function(){
+		var url = ctx + "system/menu/menuTreeDataAllByRoleId?roleId=" +roleId ;
+		var options = {
+			id: "menuTrees",
+	        url: url,
+	        check: { enable: true },
+	        expandLevel: 0
+	    };
+		$.tree.init(options);
+	};
+    this.onloadApiTreeDataAll = function(){
+    	var url = ctx + "system/menu/apiTreeDataByRoleId?roleId=" +roleId ;
+		var options = {
+			id: "apiTrees",
+	        url: url,
+	        check: { enable: true },
+	        expandLevel: 0
+	    };
+		$.tree.init(options);
+    };    
+    
+    this.switchTrees = function(authorityTpye){
+    	if (authorityTpye == "RBAC") {
+            $("#menuTrees").parents(".form-group").show();
+            $("#apiTrees").parents(".form-group").hide();
+            onloadMenuTrees();
+        } else if (authorityTpye == "API") {
+        	$("#menuTrees").parents(".form-group").hide();
+            $("#apiTrees").parents(".form-group").show();
+            onloadApiTreeDataAll();
+        }
+    }
+	    $(function() {
+	    	var authority = $("#authorityTpye:checked").val();
+	    	switchTrees(authority);
+	    	$('input').on('ifChecked', function(event){  
+        		var authorityTpye = $(event.target).val();
+        		switchTrees(authorityTpye);
+        	});  
+		});
+		
+	
+	    $("#form-role-add").validate({
+			rules:{
+				onkeyup: false,
+				roleCode:{
+					remote: {
+		                url: ctx + "system/role/checkRoleCodeUnique",
+		                type: "post",
+		                dataType: "json",
+		                data: {
+		                	"roleCode" : function() {
+		                		return $.common.trim($("#roleCode").val());
+		                    }
+		                },
+		                dataFilter: function(data, type) {
+		                	return $.validate.unique(data);
+		                }
+		            }
+				},
+				roleSort:{
+					digits:true
+				},
+			},
+			messages: {
+		        "roleCode": {
+		            remote: "权限字段已经存在"
+		        }
+		    },
+		    focusCleanup: true
+		});
+
+		function edit() {
+			var roleId = $("input[name='roleId']").val();
+			var roleName = $("input[name='roleName']").val();
+			var companyId = $("select[name='companyId']").val();
+			var roleCode = $("input[name='roleCode']").val();
+			var roleSort = $("input[name='roleSort']").val();
+			var authorityTpye = $("#authorityTpye:checked").val();
+			var status = $("input[id='status']").is(':checked') == true ? 1 : 0;
+			var roleDesc = $("input[name='roleDesc']").val();
+			var menuIds = $.tree.getCheckedNodes();
+			$.ajax({
+				cache : true,
+				type : "POST",
+				url : ctx + "system/role/edit",
+				data : {
+					"roleId": roleId,
+					"roleName": roleName,
+					"companyId": companyId,
+					"roleCode": roleCode,
+					"roleSort": roleSort,
+					"authorityTpye": authorityTpye,
+					"status": status,
+					"roleDesc": roleDesc,
+					"menuIds": menuIds
+				},
+				async : false,
+				error : function(request) {
+					$.modal.alertError("系统错误");
+				},
+				success : function(data) {
+					$.operate.successCallback(data);
+				}
+			});
+		}
+		
+		function submitHandler() {
+	        if ($.validate.form()) {
+	        	edit();
+	        }
+	    }
+	</script>
+</body>
+</html>
